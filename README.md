@@ -66,7 +66,7 @@ uvicorn app.main:app --reload
 
 ## 致謝
 
-本專案的大六壬排盤核心演算法，修改自開源專案 `daliurenpython`。特此致謝原作者在底層曆法與九宗法上的基礎貢獻。
+本專案的大六壬排盤核心演算法基於[daliurenpython-zh-tw](https://github.com/d1210182010/daliurenpython-zh-tw)，修改自開源專案 `daliurenpython`。特此致謝原作者在底層曆法與九宗法上的基礎貢獻。
 
 ```
 
