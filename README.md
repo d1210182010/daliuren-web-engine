@@ -1,4 +1,4 @@
-# 大六壬網頁排盤介面 (Da Liu Ren Web Engine)
+# 大六壬Web排盤介面 (Da Liu Ren Web Engine)
 
 這是一個將傳統大六壬 Python 引擎現代化、Web 化的開源專案。
 本專案基於 FastAPI 建構後端 API，並搭配高度視覺化的無框架前端介面，專為現代大六壬實戰預測與 AI 輔助分析所設計。
