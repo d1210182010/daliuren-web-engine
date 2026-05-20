@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.models.schemas import ShiPanRequest, ShiPanResponse
 from app.services.daliuren_engine import generate_shipan
@@ -13,6 +14,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+async def serve_frontend():
+    return FileResponse("index.html")
 
 @app.post("/api/v1/shipan/generate", response_model=ShiPanResponse)
 async def create_shipan(request: ShiPanRequest):

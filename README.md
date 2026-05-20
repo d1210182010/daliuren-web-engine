@@ -17,7 +17,7 @@
 ## 專案結構
 
 ```text
-web_rokujin/
+daliuren-web-engine/
 │
 ├── app/                  # FastAPI 後端引擎
 │   ├── main.py           # API 路由入口
