@@ -1,16 +1,9 @@
 import sys
 import os
 
-# --- 核心路徑魔法 ---
-current_dir = os.path.dirname(os.path.abspath(__file__))
-repo_core_dir = os.path.join(os.path.dirname(current_dir), "repo_core")
-if repo_core_dir not in sys.path:
-    sys.path.insert(0, repo_core_dir)
-# -----------------------------------------------------------
-
-from common import GetLi, GetShiChen, DiZHiList
-from shipan.shipan import ShiPan, MinGPan
 from opencc import OpenCC
+from app.repo_core.common import GetLi, GetShiChen, DiZHiList
+from app.repo_core.shipan.shipan import ShiPan, MinGPan
 
 def _get_engine_object(req_data):
     li_data = GetLi(

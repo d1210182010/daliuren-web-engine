@@ -1,7 +1,7 @@
 import os
 import datetime
 import eacal, pdb
-from ganzhiwuxin import *
+from app.repo_core.ganzhiwuxin import *
 
 DB = os.path.dirname(os.path.realpath(__file__)) + '/data/lifa.db'
 DiZHiList = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]

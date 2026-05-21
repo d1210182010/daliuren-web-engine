@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "daliuren-web-engine"
+version = "2.2.1"
+description = "現代化大六壬 Web 引擎與 API，支援 JSON 萃取與氣數透視。"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+    "pydantic>=2.0.0",
+    "eacal>=0.1.3",
+    "astropy>=5.0.0",
+    "prettytable>=3.0.0",
+    "regex>=2023.0.0",
+    "opencc-python-reimplemented>=0.1.7"
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]

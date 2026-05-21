@@ -1,8 +1,8 @@
 import datetime
 import math
-from ganzhiwuxin.ganzhiwuxin import 支
-from dalurenCalendar.lunar.elp82 import GetMoonEclipticLongitudeEC
-from dalurenCalendar.util.julianday import GetJulianDayFromDateTime
+from app.repo_core.ganzhiwuxin.ganzhiwuxin import 支
+from app.repo_core.dalurenCalendar.lunar.elp82 import GetMoonEclipticLongitudeEC
+from app.repo_core.dalurenCalendar.util.julianday import GetJulianDayFromDateTime
 
 
 def getMoonMansion(y, m, d, h, minu, sec):

@@ -1,5 +1,5 @@
 from astropy.time import Time
-from dalurenCalendar.util import GetDeltaT
+from app.repo_core.dalurenCalendar.util import GetDeltaT
 
 # GetJulianDayFromDateTime 将 datetime.datetime 转换为儒略日
 # 其中包含了 UTC 到 TT 的转换

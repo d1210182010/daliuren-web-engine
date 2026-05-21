@@ -1,10 +1,10 @@
 import regex
 import json
 from prettytable import PrettyTable
-from ganzhiwuxin import *
-from common import GetLi
-from shipan import guati
-from common.moonMansions import getMoonMansion
+from app.repo_core.ganzhiwuxin import *
+from app.repo_core.common import GetLi
+from app.repo_core.shipan import guati
+from app.repo_core.common.moonMansions import getMoonMansion
 
 
 class NoSanchuan(Exception):

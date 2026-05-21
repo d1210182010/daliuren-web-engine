@@ -1,9 +1,8 @@
 import math
-from dalurenCalendar.util import GetJulianCentury
-from dalurenCalendar.lunar.mathutil import Mod2Pi
-from dalurenCalendar.lunar.elp82_const import MoonLongitude
-from dalurenCalendar.lunar.iau1980 import CalcEarthLongitudeNutation
-
+from app.repo_core.dalurenCalendar.util import GetJulianCentury
+from app.repo_core.dalurenCalendar.lunar.mathutil import Mod2Pi
+from app.repo_core.dalurenCalendar.lunar.elp82_const import MoonLongitude
+from app.repo_core.dalurenCalendar.lunar.iau1980 import CalcEarthLongitudeNutation
 
 # 参数 T 儒略世纪数
 # 返回 弧度

@@ -1,10 +1,8 @@
 import datetime
 import eacal
-from shipan import shipan
-from common import Get旺衰, 旺衰
-from ganzhiwuxin import 干, 支, 干支
-from common import GetLi
-
+from app.repo_core.shipan import shipan
+from app.repo_core.common import Get旺衰, 旺衰, GetLi
+from app.repo_core.ganzhiwuxin import 干, 支, 干支
 
 def do_伏呤(sp):
     sk = sp.四课

@@ -1,1 +1,1 @@
-from dalurenCalendar.util.util import *
+from app.repo_core.dalurenCalendar.util.util import *
