@@ -1,10 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.models.schemas import ShiPanRequest, ShiPanResponse
 from app.services.daliuren_engine import generate_shipan
 
-app = FastAPI(title="大六壬 Web 氣運模擬器 API", version="1.0")
+app = FastAPI(title="大六壬Web排盤介面 API", version="2.2.1")
 
 # 設定 CORS，讓前端網頁可以跨網域呼叫 API
 app.add_middleware(
@@ -31,6 +31,7 @@ async def create_shipan(request: ShiPanRequest):
             html_content=html_result
         )
     except Exception as e:
+        # 這裡的 HTTPException 現在已經被正確引入，可以正常發揮作用了
         raise HTTPException(status_code=500, detail=f"起課失敗: {str(e)}")
 
 # 啟動伺服器指令 (開發測試用)： uvicorn app.main:app --reload
