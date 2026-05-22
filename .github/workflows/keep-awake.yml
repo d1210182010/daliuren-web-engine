@@ -1,0 +1,17 @@
+name: Keep Render Awake
+
+on:
+  schedule:
+    # 設定每 10 分鐘執行一次 
+    # (設 10 分鐘比 14 分鐘安全，因為 GitHub 免費排程有時會稍微排隊延遲)
+    - cron: '*/10 * * * *'
+  # 允許我們隨時在 GitHub 後台手動點擊執行
+  workflow_dispatch:
+
+jobs:
+  ping-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Daliuren Web Engine
+        # 用內建的 curl 工具，悄悄發送網路請求去喚醒你的 Render 伺服器
+        run: curl -s https://daliuren-web-engine.onrender.com/ > /dev/null
