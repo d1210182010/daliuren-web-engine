@@ -18,7 +18,7 @@
             --wx-earth: #8D6E63;
             --wx-metal: #F9A825;
             --wx-water: #1565C0;
-         }
+        }
         
         body {
             background-color: var(--bg-color);
@@ -445,7 +445,7 @@
             }
         }
     </style>
-<script type="text/javascript" nonce="c7c01849706441f489cc4cfc773" src="//local.adguard.org?ts=1779411960928&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgxiYXJkX3N0b3JhZ2USTBIJdGVtcF9kYXRhGj8KMGZkMTkwY2IyNDk5ZDQwMjcwMDA2NTI1ZGRlOGExYTgyMDdmNTdmZGM4MzAyOTk4MRILEgcQzeXvseIUGAE%26filename%3Dindex.html%26opi%3D103135050%26authuser%3D4&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="c7c01849706441f489cc4cfc773" src="//local.adguard.org?ts=1779411960928&amp;name=AdGuard%20Extra&amp;type=user-script"></script></head>
+</head>
 
 <body>
 
@@ -465,14 +465,13 @@
             </select>
         </label>
 
-        <!-- 實戰動態輸入元件區 -->
         <label style="margin-left:10px;">性別: 
             <select id="gender">
                 <option value="0" selected>男</option>
                 <option value="1">女</option>
             </select>
         </label>
-        <label>本命年: <input type="number" id="birth_year" value="1994" style="width: 65px;" title="請輸入求測者西元出生年"></label>
+        <label>本命年: <input type="number" id="birth_year" placeholder="未填同起課年" style="width: 95px;" title="請輸入求測者西元出生年，未填則自動以起課年計算"></label>
         <label>占事: <input type="text" id="query_matter" placeholder="測算所占" style="width: 120px; text-align: left;"></label>
 
         <button class="btn-primary" style="margin-left:10px;" onclick="triggerEngine()">起 課</button>
@@ -485,38 +484,101 @@
 
     <script>
         const wxMap = {
-            '甲': '木', '乙': '木', '寅': '木', '卯': '木',
-            '丙': '火', '丁': '火', '巳': '火', '午': '火',
-            '戊': '土', '己': '土', '辰': '土', '戌': '土', '丑': '土', '未': '土',
-            '庚': '金', '辛': '金', '申': '金', '酉': '金',
-            '壬': '水', '癸': '水', '亥': '水', '子': '水'
+            '甲': '木',
+            '乙': '木',
+            '寅': '木',
+            '卯': '木',
+            '丙': '火',
+            '丁': '火',
+            '巳': '火',
+            '午': '火',
+            '戊': '土',
+            '己': '土',
+            '辰': '土',
+            '戌': '土',
+            '丑': '土',
+            '未': '土',
+            '庚': '金',
+            '辛': '金',
+            '申': '金',
+            '酉': '金',
+            '壬': '水',
+            '癸': '水',
+            '亥': '水',
+            '子': '水'
         };
         const shengKeRules = {
-            '木': { 剋: '土' }, '火': { 剋: '金' }, '土': { 剋: '水' }, '金': { 剋: '木' }, '水': { 剋: '火' }
+            '木': {
+                剋: '土'
+            },
+            '火': {
+                剋: '金'
+            },
+            '土': {
+                剋: '水'
+            },
+            '金': {
+                剋: '木'
+            },
+            '水': {
+                剋: '火'
+            }
         };
-        
-        // 大六壬三傳關係判定字典 (全方位雷達)
+
         const dlrPatterns = {
-            sanHe: [
-                { branches: ['申', '子', '辰'], name: '申子辰 水局' },
-                { branches: ['亥', '卯', '未'], name: '亥卯未 木局' },
-                { branches: ['寅', '午', '戌'], name: '寅午戌 火局' },
-                { branches: ['巳', '酉', '丑'], name: '巳酉丑 金局' }
+            sanHe: [{
+                branches: ['申', '子', '辰'],
+                name: '申子辰 水局'
+            }, {
+                branches: ['亥', '卯', '未'],
+                name: '亥卯未 木局'
+            }, {
+                branches: ['寅', '午', '戌'],
+                name: '寅午戌 火局'
+            }, {
+                branches: ['巳', '酉', '丑'],
+                name: '巳酉丑 金局'
+            }],
+            sanHui: [{
+                branches: ['亥', '子', '丑'],
+                name: '亥子丑 水局'
+            }, {
+                branches: ['寅', '卯', '辰'],
+                name: '寅卯辰 木局'
+            }, {
+                branches: ['巳', '午', '未'],
+                name: '巳午未 火局'
+            }, {
+                branches: ['申', '酉', '戌'],
+                name: '申酉戌 金局'
+            }],
+            sanXing: [{
+                branches: ['寅', '巳', '申'],
+                name: '寅巳申 (無恩之刑)'
+            }, {
+                branches: ['丑', '戌', '未'],
+                name: '丑戌未 (恃勢之刑)'
+            }],
+            liuHe: [
+                ['子', '丑'],
+                ['寅', '亥'],
+                ['卯', '戌'],
+                ['辰', '酉'],
+                ['巳', '申'],
+                ['午', '未']
             ],
-            sanHui: [
-                { branches: ['亥', '子', '丑'], name: '亥子丑 水局' },
-                { branches: ['寅', '卯', '辰'], name: '寅卯辰 木局' },
-                { branches: ['巳', '午', '未'], name: '巳午未 火局' },
-                { branches: ['申', '酉', '戌'], name: '申酉戌 金局' }
+            liuHai: [
+                ['子', '未'],
+                ['丑', '午'],
+                ['寅', '巳'],
+                ['卯', '辰'],
+                ['申', '亥'],
+                ['酉', '戌']
             ],
-            sanXing: [
-                { branches: ['寅', '巳', '申'], name: '寅巳申 (無恩之刑)' },
-                { branches: ['丑', '戌', '未'], name: '丑戌未 (恃勢之刑)' }
+            xiangXing: [
+                ['子', '卯']
             ],
-            liuHe: [['子', '丑'], ['寅', '亥'], ['卯', '戌'], ['辰', '酉'], ['巳', '申'], ['午', '未']],
-            liuHai: [['子', '未'], ['丑', '午'], ['寅', '巳'], ['卯', '辰'], ['申', '亥'], ['酉', '戌']],
-            xiangXing: [['子', '卯']], 
-            ziXing: ['辰', '午', '酉', '亥'] 
+            ziXing: ['辰', '午', '酉', '亥']
         };
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -552,8 +614,8 @@
                 const diff = date - start;
                 const dayOfYear = Math.floor(diff / 86400000);
                 const sunOffset = Math.sin((dayOfYear - 80) / 365 * Math.PI * 2) * 0.85;
-                const sunrise = 6.0 - sunOffset; 
-                const sunset = 18.0 + sunOffset; 
+                const sunrise = 6.0 - sunOffset;
+                const sunset = 18.0 + sunOffset;
                 return (timeDecimal >= sunrise && timeDecimal < sunset);
             }
         }
@@ -577,9 +639,10 @@
             const min = parseInt(document.getElementById('minute').value);
             const rule = document.getElementById('daynight-rule').value;
 
-            // 讀取新增的實戰參數 (若為空則套用安全預設值)
+            // 讀取實戰參數 
             const genderVal = parseInt(document.getElementById('gender').value) || 0;
-            const birthYearVal = parseInt(document.getElementById('birth_year').value) || 1994;
+            // 🔴 核心變更：若未輸入或清空本命年，就直接以輸入的「起課年份 y」做為數值
+            const birthYearVal = parseInt(document.getElementById('birth_year').value) || y;
             let queryMatterVal = document.getElementById('query_matter').value.trim();
             if (!queryMatterVal) queryMatterVal = "測算所占";
 
@@ -587,14 +650,25 @@
             const ruleLabel = rule === 'traditional' ? "傳統卯酉" : "真實地平線";
 
             const payload = {
-                year: y, month: m, day: d, hour: h, minute: min, second: 0,
-                gender: genderVal, birth_year: birthYearVal, is_daytime: isDay, is_mingpan: false, query_matter: queryMatterVal
+                year: y,
+                month: m,
+                day: d,
+                hour: h,
+                minute: min,
+                second: 0,
+                gender: genderVal,
+                birth_year: birthYearVal,
+                is_daytime: isDay,
+                is_mingpan: false,
+                query_matter: queryMatterVal
             };
 
             try {
                 const response = await fetch('http://127.0.0.1:8000/api/v1/shipan/generate', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify(payload)
                 });
                 if (!response.ok) throw new Error("伺服器回傳錯誤");
@@ -641,14 +715,19 @@
                     const nextJieTime = qiTime + (qiTime - jieTime);
                     if (inputTime >= jieTime && inputTime <= nextJieTime + 86400000) {
                         progressContainer.style.display = 'block';
-                        let currentStage = "", labelStart = "", labelEnd = "", percent = 0;
+                        let currentStage = "",
+                            labelStart = "",
+                            labelEnd = "",
+                            percent = 0;
                         if (inputTime <= qiTime) {
                             currentStage = `目前位於【${solarTerms[0].name}】至【${solarTerms[1].name}】之上半月氣數`;
-                            labelStart = solarTerms[0].name; labelEnd = solarTerms[1].name;
+                            labelStart = solarTerms[0].name;
+                            labelEnd = solarTerms[1].name;
                             percent = ((inputTime - jieTime) / (qiTime - jieTime) * 100);
                         } else {
                             currentStage = `已過【${solarTerms[1].name}】中氣，月將準備交接`;
-                            labelStart = solarTerms[1].name; labelEnd = "交下個節令";
+                            labelStart = solarTerms[1].name;
+                            labelEnd = "交下個節令";
                             percent = ((inputTime - qiTime) / (nextJieTime - qiTime) * 100);
                         }
                         percent = percent > 100 ? 100 : percent.toFixed(1);
@@ -712,7 +791,6 @@
         }
 
         function injectQiSight(container, tables, kwBranches) {
-            // 徹底消除三傳與四課左側的「終端機排版幽靈欄位」
             [tables[0], tables[1]].forEach(table => {
                 if (!table) return;
                 table.querySelectorAll('tr').forEach(row => {
@@ -724,9 +802,8 @@
 
             const allTds = container.querySelectorAll('td');
             allTds.forEach(td => {
-                // 跳過三傳表格最左側的「六親欄位 (Index 0)」
                 if (td.closest('.sanchuan-table') && td.cellIndex === 0) return;
-                
+
                 const text = td.innerText.trim();
                 const char = text.charAt(0);
                 if (text.length === 1 && wxMap[text]) {
@@ -748,7 +825,8 @@
                             const tChar = tCell.childNodes[0].nodeValue.trim();
                             const dChar = dCell.childNodes[0].nodeValue.trim();
                             if (wxMap[tChar] && wxMap[dChar]) {
-                                const tWx = wxMap[tChar]; const dWx = wxMap[dChar];
+                                const tWx = wxMap[tChar];
+                                const dWx = wxMap[dChar];
                                 let arrowHTML = '';
                                 if (shengKeRules[tWx].剋 === dWx) arrowHTML = `<div class="sk-arrow">↓剋</div>`;
                                 else if (shengKeRules[dWx].剋 === tWx) arrowHTML = `<div class="sk-arrow">↑賊</div>`;
@@ -789,7 +867,6 @@
                     });
                 });
 
-                // 大六壬多重格局全方位掃描引擎
                 if (scBranches.length >= 3) {
                     const top3 = scBranches.slice(0, 3);
                     let badges = [];
@@ -824,7 +901,9 @@
 
                     dlrPatterns.ziXing.forEach(zx => {
                         let indices = [];
-                        top3.forEach((b, i) => { if (b === zx) indices.push(i); });
+                        top3.forEach((b, i) => {
+                            if (b === zx) indices.push(i);
+                        });
                         if (indices.length >= 2) {
                             badges.push(`✨ 【自刑】 ${zx}${zx}`);
                             indices.forEach(i => highlightSet.add(i));
@@ -832,7 +911,7 @@
                     });
 
                     highlightSet.forEach(idx => scBranchCells[idx].classList.add('ju-highlight'));
-                    
+
                     badges.forEach(text => {
                         const badge = document.createElement('div');
                         badge.className = 'ju-name-badge';
@@ -866,8 +945,7 @@
                 });
                 text += "\n";
             }
-            
-            // 抓取並複製所有被觸發的成局與神煞標籤給 AI
+
             const badges = document.querySelectorAll('.ju-name-badge');
             badges.forEach(b => text += b.innerText + "\n");
             if (badges.length > 0) text += "\n";
