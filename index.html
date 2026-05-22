@@ -303,7 +303,7 @@
             font-weight: bold;
             margin-top: 20px;
         }
-        /* ================= 魔法核心 ================= */
+        /* ================= 氣數透視核心樣式 ================= */
         
         .wx-tag {
             position: absolute;
@@ -423,7 +423,7 @@
             border: 1px solid #8B1D1D;
             padding: 6px 15px;
             border-radius: 20px;
-            margin: 15px auto 0;
+            margin: 10px auto 0;
             width: fit-content;
             letter-spacing: 2px;
             box-shadow: 0 4px 8px rgba(139, 29, 29, 0.15);
@@ -515,19 +515,63 @@
                 剋: '火'
             }
         };
-        const sanHeJu = [{
-            branches: ['申', '子', '辰'],
-            name: '申子辰 水局'
-        }, {
-            branches: ['亥', '卯', '未'],
-            name: '亥卯未 木局'
-        }, {
-            branches: ['寅', '午', '戌'],
-            name: '寅午戌 火局'
-        }, {
-            branches: ['巳', '酉', '丑'],
-            name: '巳酉丑 金局'
-        }];
+
+        // 大六壬三傳關係判定字典 (全方位雷達擴充)
+        const dlrPatterns = {
+            sanHe: [{
+                branches: ['申', '子', '辰'],
+                name: '申子辰 水局'
+            }, {
+                branches: ['亥', '卯', '未'],
+                name: '亥卯未 木局'
+            }, {
+                branches: ['寅', '午', '戌'],
+                name: '寅午戌 火局'
+            }, {
+                branches: ['巳', '酉', '丑'],
+                name: '巳酉丑 金局'
+            }],
+            sanHui: [{
+                branches: ['亥', '子', '丑'],
+                name: '亥子丑 水局'
+            }, {
+                branches: ['寅', '卯', '辰'],
+                name: '寅卯辰 木局'
+            }, {
+                branches: ['巳', '午', '未'],
+                name: '巳午未 火局'
+            }, {
+                branches: ['申', '酉', '戌'],
+                name: '申酉戌 金局'
+            }],
+            sanXing: [{
+                branches: ['寅', '巳', '申'],
+                name: '寅巳申 (無恩之刑)'
+            }, {
+                branches: ['丑', '戌', '未'],
+                name: '丑戌未 (恃勢之刑)'
+            }],
+            liuHe: [
+                ['子', '丑'],
+                ['寅', '亥'],
+                ['卯', '戌'],
+                ['辰', '酉'],
+                ['巳', '申'],
+                ['午', '未']
+            ],
+            liuHai: [
+                ['子', '未'],
+                ['丑', '午'],
+                ['寅', '巳'],
+                ['卯', '辰'],
+                ['申', '亥'],
+                ['酉', '戌']
+            ],
+            xiangXing: [
+                ['子', '卯']
+            ],
+            ziXing: ['辰', '午', '酉', '亥']
+        };
 
         window.addEventListener('DOMContentLoaded', () => {
             const now = new Date();
@@ -552,27 +596,18 @@
             }
         }
 
-        // ==========================================
-        // V2.2 核心：晝夜判定算法
-        // ==========================================
         function determineDaytime(year, month, day, hour, minute, rule) {
             const timeDecimal = hour + minute / 60;
-
             if (rule === 'traditional') {
-                // 傳統法則：卯(5:00) 到 酉(17:00前) 為晝。即 05:00 ~ 16:59
                 return (timeDecimal >= 5.0 && timeDecimal < 17.0);
             } else {
-                // 天文法則：以北半球(北緯25度附近)為基準的正弦波逼近算法
                 const date = new Date(year, month - 1, day);
                 const start = new Date(year, 0, 0);
                 const diff = date - start;
                 const dayOfYear = Math.floor(diff / 86400000);
-
-                // 夏至(第172天)日出最早，冬至(第355天)日出最晚。最大偏差約 0.8 小時(48分鐘)
                 const sunOffset = Math.sin((dayOfYear - 80) / 365 * Math.PI * 2) * 0.85;
-                const sunrise = 6.0 - sunOffset; // 基準日出 6:00
-                const sunset = 18.0 + sunOffset; // 基準日落 18:00
-
+                const sunrise = 6.0 - sunOffset;
+                const sunset = 18.0 + sunOffset;
                 return (timeDecimal >= sunrise && timeDecimal < sunset);
             }
         }
@@ -589,7 +624,6 @@
             loading.style.display = "block";
             document.body.classList.remove('qi-mode');
 
-            // 讀取 UI 參數
             const y = parseInt(document.getElementById('year').value);
             const m = parseInt(document.getElementById('month').value);
             const d = parseInt(document.getElementById('day').value);
@@ -597,7 +631,6 @@
             const min = parseInt(document.getElementById('minute').value);
             const rule = document.getElementById('daynight-rule').value;
 
-            // 動態判定晝夜
             const isDay = determineDaytime(y, m, d, h, min, rule);
             const ruleLabel = rule === 'traditional' ? "傳統卯酉" : "真實地平線";
 
@@ -640,18 +673,14 @@
                 let kwBranches = [];
                 infoDivs.forEach(div => {
                     div.innerHTML = div.innerHTML.replace(/(空亡[:：].+?\))/, '<span class="highlight">$1</span>');
-
-                    // 在有「晝占」或「夜占」的那一行，補上我們使用的法則標籤，讓使用者知道依據
                     if (div.innerText.includes('晝占') || div.innerText.includes('夜占')) {
                         div.innerHTML += `<span class="daynight-badge">採用: ${ruleLabel}</span>`;
                     }
-
                     infoSection.appendChild(div);
                     const kwMatch = div.innerText.match(/空亡[:：]\s*([子丑寅卯辰巳午未申酉戌亥])\s*([子丑寅卯辰巳午未申酉戌亥])/);
                     if (kwMatch) kwBranches = [kwMatch[1], kwMatch[2]];
                 });
 
-                // 動態進度條
                 const progressContainer = document.createElement('div');
                 progressContainer.className = 'progress-container';
                 progressContainer.style.display = 'none';
@@ -751,7 +780,6 @@
             [tables[0], tables[1]].forEach(table => {
                 if (!table) return;
                 table.querySelectorAll('tr').forEach(row => {
-                    // 只要該列最左邊的格子(Index 0)是全空的，就將其切除
                     while (row.cells.length > 0 && row.cells[0].innerText.trim() === '') {
                         row.cells[0].remove();
                     }
@@ -760,7 +788,7 @@
 
             const allTds = container.querySelectorAll('td');
             allTds.forEach(td => {
-                // 🔴 關鍵修正：因為左邊兩個空格被刪除了，這裡改為 === 0，只跳過第 0 欄的「六親」
+                // 完美跳過三傳表格最左側的「六親欄位 (Index 0)」
                 if (td.closest('.sanchuan-table') && td.cellIndex === 0) return;
 
                 const text = td.innerText.trim();
@@ -825,16 +853,60 @@
                         }
                     });
                 });
+
+                // 大六壬多重格局全方位掃描引擎
                 if (scBranches.length >= 3) {
                     const top3 = scBranches.slice(0, 3);
-                    const matchedJu = sanHeJu.find(ju => top3.includes(ju.branches[0]) && top3.includes(ju.branches[1]) && top3.includes(ju.branches[2]));
-                    if (matchedJu) {
-                        scBranchCells.slice(0, 3).forEach(cell => cell.classList.add('ju-highlight'));
+                    let badges = [];
+                    let highlightSet = new Set();
+
+                    const check3 = (patterns, typeName) => {
+                        let matched = patterns.find(p => p.branches.every(b => top3.includes(b)));
+                        if (matched) {
+                            badges.push(`✨ 【${typeName}】 ${matched.name}`);
+                            highlightSet.add(0).add(1).add(2);
+                        }
+                    };
+
+                    const check2 = (pairs, typeName) => {
+                        pairs.forEach(pair => {
+                            if (top3.includes(pair[0]) && top3.includes(pair[1])) {
+                                badges.push(`✨ 【${typeName}】 ${pair[0]}${pair[1]}`);
+                                top3.forEach((b, i) => {
+                                    if (b === pair[0] || b === pair[1]) highlightSet.add(i);
+                                });
+                            }
+                        });
+                    };
+
+                    check3(dlrPatterns.sanHe, '三合');
+                    check3(dlrPatterns.sanHui, '三會');
+                    check3(dlrPatterns.sanXing, '三刑');
+
+                    check2(dlrPatterns.liuHe, '六合');
+                    check2(dlrPatterns.liuHai, '六害');
+                    check2(dlrPatterns.xiangXing, '相刑');
+
+                    dlrPatterns.ziXing.forEach(zx => {
+                        let indices = [];
+                        top3.forEach((b, i) => {
+                            if (b === zx) indices.push(i);
+                        });
+                        if (indices.length >= 2) {
+                            badges.push(`✨ 【自刑】 ${zx}${zx}`);
+                            indices.forEach(i => highlightSet.add(i));
+                        }
+                    });
+
+                    highlightSet.forEach(idx => scBranchCells[idx].classList.add('ju-highlight'));
+
+                    badges.forEach(text => {
                         const badge = document.createElement('div');
                         badge.className = 'ju-name-badge';
-                        badge.innerText = `✨ 【成局】 ${matchedJu.name}`;
+                        badge.innerText = text;
+                        badge.style.marginTop = "10px";
                         scTable.parentNode.appendChild(badge);
-                    }
+                    });
                 }
             }
         }
@@ -861,8 +933,12 @@
                 });
                 text += "\n";
             }
-            const badge = document.querySelector('.ju-name-badge');
-            if (badge) text += badge.innerText + "\n\n";
+
+            // 抓取並複製所有被觸發的成局與神煞標籤給 AI
+            const badges = document.querySelectorAll('.ju-name-badge');
+            badges.forEach(b => text += b.innerText + "\n");
+            if (badges.length > 0) text += "\n";
+
             const skTable = document.querySelector('.sike-table');
             if (skTable) {
                 text += "[四課] (由右至左：第四課 至 第一課)\n";
