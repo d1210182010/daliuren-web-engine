@@ -445,6 +445,28 @@
                 transform: scale(1);
             }
         }
+        /* 💰 廣告區塊與測試顯形樣式 */
+        
+        .ad-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 25px auto;
+            text-align: center;
+            background: #FAF9F6;
+            border: 1px dashed #C2B6A3;
+            /* 淡色虛線框 */
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        
+        .ad-container::before {
+            content: "廣告贊助";
+            display: block;
+            font-size: 0.75em;
+            color: #A1887F;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
