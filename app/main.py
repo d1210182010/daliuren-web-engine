@@ -19,6 +19,10 @@ app.add_middleware(
 async def serve_frontend():
     return FileResponse("index.html")
 
+@app.get("/privacy.html", include_in_schema=False)
+async def privacy_page():
+    return FileResponse("privacy.html")
+
 @app.post("/api/v1/shipan/generate", response_model=ShiPanResponse)
 async def create_shipan(request: ShiPanRequest):
     try:
