@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大六壬實戰應用與解盤指南 - 大六壬 Web 排盤介面</title>
+    <style>
+        :root {
+            --bg-color: #F8F5EE;
+            --text-main: #2C2C2C;
+            --text-muted: #6B6358;
+            --border-color: #C2B6A3;
+            --primary-color: #8B1D1D;
+            --blockquote-bg: #F4EFE6;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: "Kaiti", "STKaiti", "Microsoft JhengHei", serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 850px;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 40px 50px;
+            border-radius: 6px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+            text-align: justify;
+        }
+        h1 {
+            font-size: 1.8em;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        h2 {
+            font-size: 1.3em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.1em;
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        p { margin-bottom: 15px; }
+        ul { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 8px; }
+        
+        .warning {
+            background-color: var(--blockquote-bg);
+            padding: 12px 20px;
+            border-left: 4px solid #D8A05E;
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        blockquote {
+            background: var(--blockquote-bg);
+            border-left: 4px solid var(--primary-color);
+            margin: 15px 0 30px 0;
+            padding: 20px;
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            font-size: 0.95em;
+            color: #333333;
+            border-radius: 0 4px 4px 0;
+        }
+        a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1em;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>大六壬實戰應用與解盤指南</h1>
+        
+        <div class="warning">
+            <strong>⚠️ 注意：</strong>以下內容為開發者個人實踐六壬之經驗分享，非絕對之學術準則，僅供同好交流與參考。
+        </div>
+
+        <p>大六壬的起課邏輯涵蓋極廣，尤其在推演事物發展的動態過程上，往往具備極高的精準度與參考價值。以下分享兩種個人最常使用的起課情境與應用方式：</p>
+
+        <h2>一、 一般占事 (針對單一事件之推演)</h2>
+        <p>針對日常大小問題的測算，取時的精準度決定了盤面的準確性。</p>
+        <ul>
+            <li><strong>正時法：</strong> 通常以起念當下的時間來起課。在此法中，「念頭發動的瞬間」極為關鍵，必須是心念最專注、疑惑最深的那一刻。</li>
+            <li><strong>活時法：</strong> 若問題已在心中盤旋許久，缺乏明確的發動時間，或是代人占卜時，可請對方隨機提供一個數字。將該數字除以 12 取餘數，以此作為起課時辰（餘 1 為子時，餘 2 為丑時，整除餘 0 則為亥時）。</li>
+        </ul>
+
+        <h2>二、 個人本命課 (生命軌跡剖析)</h2>
+        <p>若取得當事人的精確生辰，除了傳統的八字或紫微斗數，大六壬同樣能提供獨特的深度剖析。起課基準設定為「當事人出生生辰 ＋ 真實地平線」。</p>
+        <ul>
+            <li><strong>使用限制：</strong> 六壬系統並非專為先天命理設計，無法如八字般進行精密的「大運或流年」動態結構分析。</li>
+            <li><strong>應用價值：</strong> 作為「本命課」，大六壬能透過空間與神煞的立體對應，點出命主的核心特質。藉由分析四課，能看出其內在性格與外在環境的互動主軸；藉由分析三傳，則能勾勒出其一生的行事作風與生命流程。雖非主流用法，但具備極高的實踐趣味與研究價值。</li>
+        </ul>
+
+        <h2>三、 常見問題解答 (FAQ)</h2>
+        
+        <h3>Q：晝夜貴人應該如何取用？卯酉分界與真實地平線何者較佳？</h3>
+        <p>這取決於您的起課方式。若採用「正時法」（以當下真實時間起課），建議選擇以「真實地平線」為基準，較符合當下天象；若採用「活時法」（以隨機數字轉換時辰），則建議使用傳統的「卯酉分界」法則。</p>
+
+        <h3>Q：輸入的「性別」與「本命年」會影響排盤結果嗎？</h3>
+        <p>不會影響盤面的基本結構（如天地盤、三傳四課），但會直接影響後續的解讀邏輯。特別是本命年，它決定了當事人的「行年」落點與「本命」宮位，這是斷課時判斷吉凶應期的重要座標。</p>
+
+        <h3>Q：盤面中若三傳或發用落入「空亡」，該如何看待？</h3>
+        <p>空亡是六壬斷課中的關鍵變數。發用空亡通常暗示事情起步虛浮、計畫容易落空或中途生變。本站的「氣數透視」功能已將空亡地支視覺化，建議解盤時優先檢視空亡位置，再判定吉凶的實質影響力。</p>
+
+        <h3>Q：為什麼本站的「月將」切換時間，與傳統農曆節氣有些微誤差？</h3>
+        <p>本站內建 ELP2000-82 曆法模型，月將的切換是嚴格依據「太陽實際黃經交接中氣」的時間點，精確計算至分秒。相較於傳統僅以「日」為單位的粗略劃分，天文曆法能確保交節氣當日的排盤絕對準確。</p>
+
+        <h3>Q：排盤完成後，該如何著手分析？</h3>
+        <p>古語云：「六壬排盤易，斷課難」。本站已為您解決繁複的運算過程，並提供「複製盤面給 AI」的功能。取得結構化數據後，建議搭配大語言模型（如 ChatGPT、Claude）作為輔助解盤工具。</p>
+
+        <h2>四、 輔助解盤提示詞 (AI Prompts)</h2>
+        <p>您可以點擊排盤結果下方的「複製盤面給 AI」按鈕，將數據貼入 AI 模型中，並於文末加上以下對應的提示詞，讓 AI 協助您進行系統性分析：</p>
+
+        <h3>1. 針對單一事件之實戰占卜</h3>
+        <blockquote>
+            這是一張大六壬的排盤數據。我此次占測的問題是：『[請填入具體問題，例如：下個月的轉職面試是否順利？]』。請依據此盤面的四課三傳生剋關係、天將吉凶（如青龍、白虎）、以及是否有空亡或特殊煞星干擾，為我進行詳細的吉凶推演，並提供具體的應對建議。
+        </blockquote>
+
+        <h3>2. 本命課之深度剖析 (性格與生命軌跡)</h3>
+        <blockquote>
+            這是一張大六壬的『本命課』數據（以當事人出生時刻起課）。請基於大六壬學理，為我進行完整的本命深度剖析，必須包含以下三個層次：<br><br>
+            1. 核心性格與人際主軸：請詳解四課的干支生剋、主客關係與日辰格局。<br>
+            2. 生命發展軌跡與行事作風：請詳解初傳、中傳、末傳的傳遞演變與天將涵義。<br>
+            3. 命局特殊結構：請檢視盤面是否具備特殊課體（如伏吟、反吟、涉害等）或關鍵神煞，並說明其對命主的具體影響。請給出客觀且具體的論斷。
+        </blockquote>
+
+        <h3>3. 技術流派與課體拆解 (適合初學者學習)</h3>
+        <blockquote>
+            請扮演大六壬導師，針對這組盤面進行學理拆解。請向我說明：這次的發用法則是哪一種（如賊剋、比用、涉害等）及其推演過程？並以白話文解釋，這張盤的天地盤配置中，有哪些值得注意的生剋制化或吉凶徵兆？
+        </blockquote>
+
+        <a href="/" class="back-link">← 回到排盤首頁</a>
+    </div>
+</body>
+</html>

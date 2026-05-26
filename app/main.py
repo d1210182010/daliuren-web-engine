@@ -23,6 +23,10 @@ async def serve_frontend():
 async def privacy_page():
     return FileResponse("privacy.html")
 
+@app.get("/tutorial.html", include_in_schema=False)
+async def tutorial_page():
+    return FileResponse("tutorial.html")
+
 @app.post("/api/v1/shipan/generate", response_model=ShiPanResponse)
 async def create_shipan(request: ShiPanRequest):
     try:
