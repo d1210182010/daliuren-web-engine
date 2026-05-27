@@ -849,6 +849,37 @@
                 container.appendChild(layoutWrapper);
                 container.appendChild(guatiSection);
 
+
+                layoutWrapper.appendChild(topRow);
+                layoutWrapper.appendChild(tianpanBox);
+                const guatiSection = document.createElement('div');
+                guatiSection.className = 'guati-section';
+                guatiDivs.forEach(d => guatiSection.appendChild(d));
+
+                container.appendChild(infoSection);
+                container.appendChild(progressContainer);
+                container.appendChild(layoutWrapper);
+                container.appendChild(guatiSection);
+
+                // 👇 🔴 新增：加入「解盤教學指南」的提示區塊 👇
+                const guideDiv = document.createElement('div');
+                guideDiv.style.marginTop = "35px";
+                guideDiv.style.padding = "20px";
+                guideDiv.style.backgroundColor = "#FDFBF7"; // 淡淡的底色
+                guideDiv.style.border = "1px dashed var(--border-color)";
+                guideDiv.style.borderLeft = "5px solid var(--accent-red)"; // 側邊醒目的紅線
+                guideDiv.style.textAlign = "center";
+                guideDiv.style.borderRadius = "4px";
+                guideDiv.innerHTML = `
+                    <div style="font-size: 1.1em; color: var(--text-main); font-weight: bold; margin-bottom: 12px;">
+                        🤔 排好盤了，但不知道怎麼解讀嗎？
+                    </div>
+                    <a href="/tutorial.html" target="_blank" style="display: inline-block; background: var(--accent-red); color: white; text-decoration: none; padding: 10px 24px; border-radius: 4px; font-weight: bold; letter-spacing: 1px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        👉 查看【實戰與解盤指南】
+                    </a>
+                `;
+                container.appendChild(guideDiv);
+
                 injectQiSight(container, tables, kwBranches);
 
                 container.style.display = "block";
