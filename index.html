@@ -680,10 +680,20 @@
         }
 
         async function triggerEngine() {
+            // 🔴 新增：防連點鎖定機制 (開始) - 鎖死按鈕並改變外觀
+            const calcBtn = document.querySelector('button[onclick="triggerEngine()"]');
+            if (calcBtn) {
+                calcBtn.disabled = true;
+                calcBtn.style.cursor = "not-allowed";
+                calcBtn.style.opacity = "0.6";
+            }
+
             const container = document.getElementById('shipan-container');
             const btnQi = document.getElementById('btn-qi');
             const btnCopy = document.getElementById('btn-copy');
             const loading = document.getElementById('loading');
+
+            // 隱藏舊按鈕與容器，並瞬間清空舊盤面避免疊加
             container.style.display = "none";
             btnQi.style.display = "none";
             btnCopy.style.display = "none";
@@ -700,7 +710,7 @@
 
             // 讀取實戰參數 
             const genderVal = parseInt(document.getElementById('gender').value) || 0;
-            // 🔴 核心變更：若未輸入或清空本命年，就直接以輸入的「起課年份 y」做為數值
+            // 若未輸入或清空本命年，就直接以輸入的「起課年份 y」做為數值
             const birthYearVal = parseInt(document.getElementById('birth_year').value) || y;
             let queryMatterVal = document.getElementById('query_matter').value.trim();
             if (!queryMatterVal) queryMatterVal = "測算所占";
@@ -842,10 +852,17 @@
                 btnCopy.style.display = "block";
 
             } catch (error) {
-                container.innerHTML = `<p style="color: red; text-align: center;">起課失敗！</p>`;
+                container.innerHTML = `<p style="color: red; text-align: center;">起課失敗！請檢查連線狀態。</p>`;
                 container.style.display = "block";
             } finally {
                 loading.style.display = "none";
+
+                // 🔴 新增：防連點鎖定機制 (解除) - 運算結束後，重新啟用按鈕
+                if (calcBtn) {
+                    calcBtn.disabled = false;
+                    calcBtn.style.cursor = "pointer";
+                    calcBtn.style.opacity = "1";
+                }
             }
         }
 
