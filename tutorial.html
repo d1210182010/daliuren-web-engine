@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大六壬實戰應用與解盤指南 - 大六壬 Web 排盤介面</title>
+    <title>大六壬實戰應用與解盤指南｜起課方法、空亡、貴登天門教學 - 大六壬 Web 排盤介面</title>
+    <meta name="description" content="大六壬實戰應用完整指南。涵蓋活時法與固定時法起課情境、旬中空亡判斷、驛馬禄神、貴登天門大吉象、天罅地網，以及搭配 AI 大語言模型進行現代化解盤的完整提示詞教學。">
+    <meta name="keywords" content="大六壬教學,大六壬起課,大六壬解盤,六壬實戰,空亡,貴登天門,驛馬,天罅地網,AI算命,六壬斷課">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLKQR6YWST"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VLKQR6YWST');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1866160207158362" crossorigin="anonymous"></script>
+
     <style>
         :root {
             --bg-color: #F8F5EE;
@@ -11,155 +23,561 @@
             --text-muted: #6B6358;
             --border-color: #C2B6A3;
             --primary-color: #8B1D1D;
+            --panel-bg: #FFFFFF;
             --blockquote-bg: #F4EFE6;
+            --highlight-bg: #FFF8F0;
         }
+        * { box-sizing: border-box; }
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: "Kaiti", "STKaiti", "Microsoft JhengHei", serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 0 20px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .container {
-            max-width: 850px;
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            padding: 40px 50px;
-            border-radius: 6px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
-            line-height: 1.8;
-            text-align: justify;
-        }
-        h1 {
-            font-size: 1.8em;
-            letter-spacing: 2px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+        nav {
+            width: 100%;
+            max-width: 960px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
             text-align: center;
+            font-size: 0.95em;
+        }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 12px;
+            padding: 4px 0;
+        }
+        nav a:hover { color: var(--primary-color); border-bottom: 1px solid var(--primary-color); }
+        nav a.active { color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); }
+        .page-header {
+            width: 100%;
+            max-width: 960px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 2em;
+            letter-spacing: 4px;
             color: var(--primary-color);
-        }
-        h2 {
-            font-size: 1.3em;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            border-left: 4px solid var(--primary-color);
-            padding-left: 12px;
-        }
-        h3 {
-            font-size: 1.1em;
-            color: var(--text-main);
-            margin-top: 25px;
             margin-bottom: 10px;
         }
-        p { margin-bottom: 15px; }
-        ul { margin-bottom: 20px; padding-left: 25px; }
-        li { margin-bottom: 8px; }
-        
-        .warning {
-            background-color: var(--blockquote-bg);
-            padding: 12px 20px;
-            border-left: 4px solid #D8A05E;
+        .page-header p {
             color: var(--text-muted);
-            font-size: 0.95em;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+        .toc {
+            width: 100%;
+            max-width: 960px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 20px 30px;
+            margin-bottom: 40px;
+        }
+        .toc h3 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin: 0 0 12px 0;
+            letter-spacing: 2px;
+        }
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 20px;
+        }
+        .toc li { line-height: 1.8; }
+        .toc a { color: var(--text-main); text-decoration: none; font-size: 0.95em; }
+        .toc a:hover { color: var(--primary-color); }
+        .section {
+            width: 100%;
+            max-width: 960px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 35px 40px;
             margin-bottom: 30px;
-            border-radius: 0 4px 4px 0;
+        }
+        .section h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            letter-spacing: 3px;
+            margin: 0 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section h3 {
+            font-size: 1.15em;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            margin: 24px 0 12px 0;
+        }
+        .section p {
+            line-height: 1.9;
+            margin-bottom: 14px;
         }
         blockquote {
             background: var(--blockquote-bg);
             border-left: 4px solid var(--primary-color);
-            margin: 15px 0 30px 0;
-            padding: 20px;
-            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
-            font-size: 0.95em;
-            color: #333333;
-            border-radius: 0 4px 4px 0;
+            margin: 16px 0;
+            padding: 12px 20px;
+            font-size: 1em;
+            line-height: 1.8;
+            color: #3a3028;
         }
-        a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-        
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
+        .highlight-box {
+            background: var(--highlight-bg);
+            border: 1px solid #e0cfa8;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            line-height: 1.9;
+        }
+        .steps {
+            counter-reset: step;
+            padding: 0;
+            list-style: none;
+        }
+        .steps li {
+            counter-increment: step;
+            position: relative;
+            padding: 14px 16px 14px 54px;
+            margin-bottom: 12px;
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            line-height: 1.8;
+        }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 16px;
+            top: 14px;
             font-size: 1.1em;
-            padding-top: 20px;
-            border-top: 1px dashed var(--border-color);
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 26px;
+            text-align: center;
         }
-
-        @media (max-width: 600px) {
-            .container { padding: 25px; }
-            h1 { font-size: 1.5em; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .card {
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 16px;
+        }
+        .card .card-title {
+            font-size: 1.05em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .card p {
+            font-size: 0.92em;
+            line-height: 1.75;
+            margin: 0;
+        }
+        .prompt-box {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 6px;
+            padding: 20px 22px;
+            margin: 16px 0;
+            font-family: "Courier New", monospace;
+            font-size: 0.88em;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .info-panel {
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 18px;
+        }
+        .info-panel h4 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 1em;
+        }
+        .info-panel p { font-size: 0.92em; line-height: 1.8; margin: 0; }
+        .ad-slot {
+            width: 100%;
+            max-width: 960px;
+            margin: 10px 0 30px;
+            text-align: center;
+        }
+        .ma-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 0.93em;
+        }
+        .ma-table th, .ma-table td {
+            border: 1px solid var(--border-color);
+            padding: 9px 14px;
+            text-align: center;
+        }
+        .ma-table th {
+            background: var(--blockquote-bg);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .ma-table tr:nth-child(even) td { background: #faf7f2; }
+        @media (max-width: 640px) {
+            .section { padding: 24px 18px; }
+            .toc ol { grid-template-columns: 1fr; }
+            .two-col { grid-template-columns: 1fr; }
+            .card-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>大六壬實戰應用與解盤指南</h1>
-        
-        <div class="warning">
-            <strong>⚠️ 注意：</strong>以下內容為開發者個人實踐六壬之經驗分享，非絕對之學術準則，僅供同好交流與參考。
-        </div>
 
-        <p>大六壬的起課邏輯涵蓋極廣，尤其在推演事物發展的動態過程上，往往具備極高的精準度與參考價值。以下分享兩種個人最常使用的起課情境與應用方式：</p>
+<nav>
+    <a href="/">首頁排盤</a> |
+    <a href="knowledge.html">大六壬知識庫</a> |
+    <a href="tutorial.html" class="active">實戰指南</a> |
+    <a href="privacy.html">隱私政策</a>
+</nav>
 
-        <h2>一、 一般占事 (針對單一事件之推演)</h2>
-        <p>針對日常大小問題的測算，取時的精準度決定了盤面的準確性。</p>
-        <ul>
-            <li><strong>正時法：</strong> 通常以起念當下的時間來起課。在此法中，「念頭發動的瞬間」極為關鍵，必須是心念最專注、疑惑最深的那一刻。</li>
-            <li><strong>活時法：</strong> 若問題已在心中盤旋許久，缺乏明確的發動時間，或是代人占卜時，可請對方隨機提供一個數字。將該數字除以 12 取餘數，以此作為起課時辰（餘 1 為子時，餘 2 為丑時，整除餘 0 則為亥時）。</li>
-        </ul>
+<div class="page-header">
+    <h1>大六壬實戰指南</h1>
+    <p>從起課到解盤，系統說明六壬實際操作的每一個環節，並補充空亡、驛馬、貴登天門等進階判斷方法。</p>
+</div>
 
-        <h2>二、 個人本命課 (生命軌跡剖析)</h2>
-        <p>若取得當事人的精確生辰，除了傳統的八字或紫微斗數，大六壬同樣能提供獨特的深度剖析。起課基準設定為「當事人出生生辰 ＋ 真實地平線」。</p>
-        <ul>
-            <li><strong>使用限制：</strong> 六壬系統並非專為先天命理設計，無法如八字般進行精密的「大運或流年」動態結構分析。</li>
-            <li><strong>應用價值：</strong> 作為「本命課」，大六壬能透過空間與神煞的立體對應，點出命主的核心特質。藉由分析四課，能看出其內在性格與外在環境的互動主軸；藉由分析三傳，則能勾勒出其一生的行事作風與生命流程。雖非主流用法，但具備極高的實踐趣味與研究價值。</li>
-        </ul>
+<div class="toc">
+    <h3>目錄</h3>
+    <ol>
+        <li><a href="#workflow">一、完整起課流程</a></li>
+        <li><a href="#kongwang">二、旬中空亡：判斷事情能否成功</a></li>
+        <li><a href="#luma">三、禄馬：供給與速度之象</a></li>
+        <li><a href="#gui-tian">四、貴登天門：大吉之時</a></li>
+        <li><a href="#tian-luo">五、天罅地網</a></li>
+        <li><a href="#xi-jie">六、喜神與解神</a></li>
+        <li><a href="#read-steps">七、解盤步驟與要點</a></li>
+        <li><a href="#ai-assist">八、搭配 AI 進行現代解盤</a></li>
+    </ol>
+</div>
 
-        <h2>三、 常見問題解答 (FAQ)</h2>
-        
-        <h3>Q：晝夜貴人應該如何取用？卯酉分界與真實地平線何者較佳？</h3>
-        <p>這取決於您的起課方式。若採用「正時法」（以當下真實時間起課），建議選擇以「真實地平線」為基準，較符合當下天象；若採用「活時法」（以隨機數字轉換時辰），則建議使用傳統的「卯酉分界」法則。</p>
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 
-        <h3>Q：輸入的「性別」與「本命年」會影響排盤結果嗎？</h3>
-        <p>不會影響盤面的基本結構（如天地盤、三傳四課），但會直接影響後續的解讀邏輯。特別是本命年，它決定了當事人的「行年」落點與「本命」宮位，這是斷課時判斷吉凶應期的重要座標。</p>
+<!-- 第一節 -->
+<div class="section" id="workflow">
+    <h2>一、完整起課流程</h2>
 
-        <h3>Q：盤面中若三傳或發用落入「空亡」，該如何看待？</h3>
-        <p>空亡是六壬斷課中的關鍵變數。發用空亡通常暗示事情起步虛浮、計畫容易落空或中途生變。本站的「氣數透視」功能已將空亡地支視覺化，建議解盤時優先檢視空亡位置，再判定吉凶的實質影響力。</p>
+    <p>六壬起課的完整流程可分為以下幾個步驟，無論使用活時法或固定時法，核心步驟都是一致的：</p>
 
-        <h3>Q：為什麼本站的「月將」切換時間，與傳統農曆節氣有些微誤差？</h3>
-        <p>本站內建 ELP2000-82 曆法模型，月將的切換是嚴格依據「太陽實際黃經交接中氣」的時間點，精確計算至分秒。相較於傳統僅以「日」為單位的粗略劃分，天文曆法能確保交節氣當日的排盤絕對準確。</p>
+    <ol class="steps">
+        <li><strong>確定起課要素</strong>：取得三個基本要素——起課時辰（地支）、今日干支（日柱）、本月月將。若使用活時法，讓來人隨意報數，除以十二取餘數換算成地支作為時辰；若使用固定時法，則直接使用實際時辰。</li>
+        <li><strong>佈設天地盤</strong>：地盤固定不動，以月將加臨起課時辰，月將所在地支對應至時辰的地盤位置，其餘十一個地支依序順時針排列，完成天盤。</li>
+        <li><strong>取四課</strong>：從日干寄宮出發，查看天盤加臨的地支（干上陽神），再從該地支看其天盤加臨（干上陰神）；再從日支位置看天盤加臨（支上陽神），及其天盤加臨（支上陰神），得到四課。</li>
+        <li><strong>判斷四課中的克賊</strong>：觀察四課中每一課的上下地支五行生克，記錄所有「上克下」（克）和「下克上」（賊）的位置。</li>
+        <li><strong>依九大格局取三傳</strong>：按照九大格局的順序（貼克→比用→涉害→遙克→昴星→別責→八專→伏吟→返吟）確定適用的課式，取出初傳、中傳、末傳。</li>
+        <li><strong>配置十二天將</strong>：依照晝夜貴人的位置，將十二天將安置在天盤各宮，與地支神（天盤的地支）並列，形成完整的六壬課式圖。</li>
+        <li><strong>綜合斷課</strong>：整合八個斷課要素（正時、月將、日干、日支、初傳、中傳、末傳、年命），配合旺相休囚、空亡、天將特性，進行全面的吉凶分析。</li>
+    </ol>
 
-        <h3>Q：排盤完成後，該如何著手分析？</h3>
-        <p>古語云：「六壬排盤易，斷課難」。本站已為您解決繁複的運算過程，並提供「複製盤面給 AI」的功能。取得結構化數據後，建議搭配大語言模型（如 ChatGPT、Claude）作為輔助解盤工具。</p>
+    <h3>晝夜貴人的取法</h3>
+    <p>十二天將的安置從貴人（丑）開始。貴人有晝貴（陽貴）和夜貴（陰貴）之分，不同日干對應不同的晝夜貴人起點：</p>
 
-        <h2>四、 輔助解盤提示詞 (AI Prompts)</h2>
-        <p>您可以點擊排盤結果下方的「複製盤面給 AI」按鈕，將數據貼入 AI 模型中，並於文末加上以下對應的提示詞，讓 AI 協助您進行系統性分析：</p>
-
-        <h3>1. 針對單一事件之實戰占卜</h3>
-        <blockquote>
-            這是一張大六壬的排盤數據。我此次占測的問題是：『[請填入具體問題，例如：下個月的轉職面試是否順利？]』。請依據此盤面的四課三傳生剋關係、天將吉凶（如青龍、白虎）、以及是否有空亡或特殊煞星干擾，為我進行詳細的吉凶推演，並提供具體的應對建議。
-        </blockquote>
-
-        <h3>2. 本命課之深度剖析 (性格與生命軌跡)</h3>
-        <blockquote>
-            這是一張大六壬的『本命課』數據（以當事人出生時刻起課）。請基於大六壬學理，為我進行完整的本命深度剖析，必須包含以下三個層次：<br><br>
-            1. 核心性格與人際主軸：請詳解四課的干支生剋、主客關係與日辰格局。<br>
-            2. 生命發展軌跡與行事作風：請詳解初傳、中傳、末傳的傳遞演變與天將涵義。<br>
-            3. 命局特殊結構：請檢視盤面是否具備特殊課體（如伏吟、反吟、涉害等）或關鍵神煞，並說明其對命主的具體影響。請給出客觀且具體的論斷。
-        </blockquote>
-
-        <h3>3. 技術流派與課體拆解 (適合初學者學習)</h3>
-        <blockquote>
-            請扮演大六壬導師，針對這組盤面進行學理拆解。請向我說明：這次的發用法則是哪一種（如賊剋、比用、涉害等）及其推演過程？並以白話文解釋，這張盤的天地盤配置中，有哪些值得注意的生剋制化或吉凶徵兆？
-        </blockquote>
-
-        <a href="/" class="back-link">← 回到排盤首頁</a>
+    <div class="highlight-box">
+        <strong>晝貴（陽貴）起點：</strong>甲戊庚→丑，乙己→子，丙丁→亥，壬癸→卯，辛→午<br>
+        <strong>夜貴（陰貴）起點：</strong>甲戊庚→未，乙己→申，丙丁→酉，壬癸→巳，辛→寅<br>
+        <br>
+        白天（卯至酉之間的時辰）起課用晝貴，夜晚（酉至卯之間的時辰）起課用夜貴。貴人確定後，螣蛇→朱雀→六合→勾陳→青龍→天空→白虎→太常→玄武→太陰→天后，依序順時針排列。
     </div>
+</div>
+
+<!-- 第二節 -->
+<div class="section" id="kongwang">
+    <h2>二、旬中空亡：判斷事情能否成功</h2>
+
+    <p>在六壬課占的分析中，找出旬中空亡是一個非常重要的環節，因為它直接影響事情的成敗及應驗與否。</p>
+
+    <h3>什麼是空亡</h3>
+    <p>空亡就是「只有地支，沒有天干」的地支。六十甲子由十天干和十二地支循環相配，每一旬（十天）會有兩個地支沒有對應的天干，這兩個地支就是該旬的「旬中空亡」。</p>
+    <blockquote>
+        空亡是只有地支、沒有天干，所以其氣是空的或非常弱的。在空亡之中辦任何事情都不能成功。空亡就象一個陷阱；吉神落入其中則好事不成，凶神落入其中，則壞事不凶。
+    </blockquote>
+
+    <h3>空亡的判斷規則</h3>
+    <div class="two-col">
+        <div class="info-panel">
+            <h4>旺氣入空亡</h4>
+            <p>若落入空亡的是旺相之氣，則可以保持延續，等到這一旬過完、被天干填實之後，便可脫出重新活動。事情還是有可能成功的，只是暫時延期。</p>
+        </div>
+        <div class="info-panel">
+            <h4>休囚之氣入空亡</h4>
+            <p>若落入空亡的是休囚之氣，則被化為無形，事情消散。即使過完此旬也無濟於事，事情無成功之舉。若是久病之人落入空亡，則凶象更甚。</p>
+        </div>
+    </div>
+
+    <h3>衝神可以破空</h3>
+    <p>空亡雖然不利，但衝神可以解救。即干支落入空亡，而發用（初傳）為空亡之衝神，則為救神——衝即子午衝、寅申衝之類，空亡被衝破，則不為空，事情仍有轉機。</p>
+
+    <h3>五行入空亡的特殊現象</h3>
+    <blockquote>
+        火空則發，金空則吟，木空則朽，水空則枯，土空則通。
+    </blockquote>
+    <p>這五種五行入空亡後各有其象，可根據所占之事的五行屬性，取其有利的方向加以判斷。例如：占與文書、官事相關的事（火象），火空則發，反而可能有意外的突破；但木空則朽，若占樹木、生命、生機相關之事，入空亡則主衰敗。</p>
+
+    <h3>孤虛的概念</h3>
+    <p>空亡相對的地支稱為「孤」，而空亡本身稱為「虛」。例如戌亥空亡，則辰巳為孤。古法有「背孤擊虛，一女可敵十夫」之說，意指作戰、謀策時，以背對孤神、面向空虛方向為妙。這是六壬在方位策略運用上的一個重要概念。</p>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第三節 -->
+<div class="section" id="luma">
+    <h2>三、禄馬：供給與速度之象</h2>
+
+    <h3>什麼是禄</h3>
+    <p>「禄」就是天干到達「臨官」之方。在長生十二宮中，臨官是氣將旺而尚未到達帝旺的階段，代表「將旺之時」，有供給、供養、恩賜的意思。</p>
+    <ul style="line-height:2.1;">
+        <li><strong>年禄</strong>：年命天干入臨官。年命代表至尊、長者、單位的最高領導，得年禄表示得到上位者的關懷照顧，即使有病也得良醫。</li>
+        <li><strong>日禄</strong>：日干入臨官。日禄加臨表示問事人自己處於氣旺之方，始終得到某種保護和支持，辦事順且吉。</li>
+    </ul>
+
+    <h3>什麼是驛馬</h3>
+    <p>驛馬是「四長生之衝神」。長生之氣弱而慢，富有生機；一旦遇到衝神，則加快生長，事情變得快速來臨，有「乘著快馬奔跑」之象。</p>
+
+    <table class="ma-table">
+        <thead>
+            <tr>
+                <th>三合局</th>
+                <th>屬性</th>
+                <th>長生位</th>
+                <th>驛馬（衝長生）</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>申子辰</td><td>水局</td><td>申</td><td>寅</td></tr>
+            <tr><td>亥卯未</td><td>木局</td><td>亥</td><td>巳</td></tr>
+            <tr><td>寅午戌</td><td>火局</td><td>寅</td><td>申</td></tr>
+            <tr><td>巳酉丑</td><td>金局</td><td>巳</td><td>亥</td></tr>
+        </tbody>
+    </table>
+
+    <h3>天馬與驛馬</h3>
+    <p>馬分「天馬」和「驛馬」兩種。在干支學中，天馬是天干丁（三奇之一），三傳中逢丁為見天馬；而上表所列的長生衝神則為驛馬。若天馬與驛馬同時出現（天馬加驛馬），則為「快馬加鞭」，表示事物立刻就會出現，速度極快。</p>
+
+    <blockquote>
+        馬到山頭人富貴，禄到山頭旺子孫，若逢禄馬一同到，千祥百福自駢臻。
+    </blockquote>
+    <p>「山頭」就是本命之方。馬遇旺相之地才會富貴，若禄馬皆空亡，或處休囚，則是勞碌奔波之象。</p>
+</div>
+
+<!-- 第四節 -->
+<div class="section" id="gui-tian">
+    <h2>四、貴登天門：大吉之時</h2>
+
+    <p>「貴登天門」是六壬中最著名的大吉象之一，《協紀辨方》中有明確記載：</p>
+    <blockquote>
+        年之善不如月之善，月之善不如日之善，日之善不如時之善，貴人登門乃時之最善者也。
+    </blockquote>
+
+    <h3>天門與地戶</h3>
+    <p>在六壬盤中，戌亥之間為「天門」，辰巳之間為「地戶」，是天地之間的通達門戶。戌為一片空地（河魁、網罗之地），過了戌，到達亥，就叫做「登天門」。天門在北方北極之地，是最高統治者居住的地方，君子到達天門則萬事吉利。</p>
+
+    <h3>神藏煞沒的意義</h3>
+    <p>「貴登天門」就是貴人（天乙貴人）臨亥宮，開始順轉。此時六凶神皆潛藏無力，六吉神各歸其舍，法度嚴明，是謂「神藏煞沒」：</p>
+    <blockquote>
+        貴人臨乾亥登天門，則蛇臨壬子而落水，朱雀臨癸丑而鎩羽，六合臨艮寅而乘軒，勾陳臨甲卯而登階，青龍臨乙辰而游海，天空臨巽巳而投軌，白虎臨丙午而燒身，太常臨丁未而登廷，玄武臨坤申而折足，太陰臨庚酉而回宮，天后臨辛戌而入帳，六吉將得地，而六凶將斂威，故曰神藏煞沒。
+    </blockquote>
+    <p>由此可見，當貴人登天門之際，所有凶神都落入受制之地（螣蛇落水、白虎燒身、玄武折足……），六吉神則各歸旺盛之所，這是擇時選日中最理想的格局之一。</p>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第五節 -->
+<div class="section" id="tian-luo">
+    <h2>五、天罅地網</h2>
+
+    <p>天罅地網是六壬中代表困鎖、遲滯的特殊地理概念，源自古代天文學中天地傾斜軸的方向。</p>
+
+    <div class="two-col">
+        <div class="info-panel">
+            <h4>天罅（辰巳之間）</h4>
+            <p>辰為天罡，有鉤連拘捕之性。辰在三月春暖花開，旺木成林之時，萬物由卯而出、入辰而動，有鼓萬物而動之性。旺相則進，休囚則鎖。落辰地的凶神有被制之象，吉神落辰則有被困之憂。</p>
+        </div>
+        <div class="info-panel">
+            <h4>地網（戌亥之間）</h4>
+            <p>戌為天牢（地網），有空虛、侵欺、詐偽不實之性。戌是一片空地、網罗之地，事物進入難以動轉，有被勾連、遲滯、禁鎖、困囚等凶險之象，就象掉進陷阱一樣。</p>
+        </div>
+    </div>
+
+    <p style="margin-top:14px;">無論吉神凶神落入天罅地網，皆將被困。凶神落入則「賊落法網」，對我有利；吉神落入則「我遭殃」，需要提防。這一概念在斷課時，尤其在判斷事情是否能順利推進方面，有重要的參考價值。</p>
+</div>
+
+<!-- 第六節 -->
+<div class="section" id="xi-jie">
+    <h2>六、喜神與解神</h2>
+
+    <h3>喜神</h3>
+    <p>喜神就是陽光照耀、萬物溫暖之神，在五行為火，在天干為丙。丙為南方火氣之方，又為白天陽光照耀之方。六壬以丙為「相見」，為天喜，為消災免禍之神，代表文才、運氣之火。</p>
+    <p>求喜神位置的方法，用「五鼠遁」法（從子開始計算各時辰的天干），找到當時時辰天干丙所落的地支位置，即為喜神所在之方：</p>
+    <div class="highlight-box">
+        甲己日 → 喜神在寅（艮）<br>
+        乙庚日 → 喜神在戌（乾）<br>
+        丙辛日 → 喜神在申（坤）<br>
+        丁壬日 → 喜神在午（離）<br>
+        戊癸日 → 喜神在辰（巽）
+    </div>
+    <p>六壬以丁為天馬、為奇、為上進之大吉神，以丙為相見之喜神。遇陽方（寅卯丙丁之位）則吉上增吉；遇陰方（酉戌亥之地）則主陰私暗昧之事，凶者更凶。若喜神為日破之方，則不能為喜。</p>
+
+    <h3>解神</h3>
+    <p>解神就是解災除咎之神，是六陽神之衝神。解神能衝散原有的凶事矛盾，有如強大的第三方力量介入，使原有的一對矛盾瓦解分化，從而化解凶災與煩惱。</p>
+    <blockquote>
+        正二月申，三四月戌，五六月子，七八月寅，九十月辰，十一十二月午。
+    </blockquote>
+    <p>需注意：並非所有衝神都是解神。以六陽神之衝為解神；六陰神之衝則不為解，反而使矛盾更為激烈。判斷時需確認衝神是否為陽位。</p>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第七節 -->
+<div class="section" id="read-steps">
+    <h2>七、解盤步驟與要點</h2>
+
+    <p>六壬解盤並非記住幾條規則就能上手，而是需要整合多個層次的資料，按照一定的邏輯順序展開分析。以下是建議的解盤步驟：</p>
+
+    <ol class="steps">
+        <li><strong>先看課式（格局）</strong>：確認是貼克、比用、昴星、伏吟、返吟……哪一種格局。不同格局反映了事件的基本性質：貼克（重審/元首）表示有明確的動機或壓力；昴星表示動機不明確，有暗中干擾；伏吟表示事物困頓、百事靜伏；返吟表示動盪反覆。</li>
+        <li><strong>看三傳的整體走向</strong>：初傳（動機）→中傳（過程）→末傳（結局），觀察三傳之間是相生還是相克，是順行還是逆行，確定事件的總體走勢是「趨吉」還是「向凶」。</li>
+        <li><strong>確認問事類型，找對應天將</strong>：問的是財事（看青龍、太常），還是官訟（看勾陳、朱雀），還是疾病（看白虎、螣蛇），還是婚姻（看六合、天后）？找到對應天將所在的三傳位置，重點分析其旺相休囚。</li>
+        <li><strong>查空亡與天罅地網</strong>：三傳中是否有落入空亡的？若末傳落空，結局恐怕有落空之虞；若初傳落空，動機或起因可能是虛假的。同時查看三傳是否落入辰戌（天罅地網）。</li>
+        <li><strong>觀察旺相休囚</strong>：結合當前季節，判斷三傳中各地支的五行強弱，強者有力，弱者受制。末傳若旺相，結局有力；末傳若休囚，結局无力。</li>
+        <li><strong>看年命（行年）的介入</strong>：若問事人的本命地支出現在三傳或四課中，說明此事與本人的命運有更深的牽連，應期更近，影響更大。</li>
+        <li><strong>找驛馬和喜神</strong>：若問的是出行、遷移、速度相關的事，重點看驛馬是否發用；若希望找到吉利的方位或時機，可參考喜神和解神的位置。</li>
+        <li><strong>綜合得出結論</strong>：整合上述所有要素，先判斷大方向（吉/凶/待機），再細化時間（應期）、原因（天將）、建議（如何趨吉避凶）。</li>
+    </ol>
+
+    <h3>月將在斷課中的作用</h3>
+    <p>月將不僅是天盤的旋轉依據，更是當月「值事之將」。陳公獻《大六壬指南》中，對十二月將的事務象徵有明確歸納：</p>
+    <blockquote>
+        寅功曹主木器文書，申傳送主行程消息，卯太衝主林木舟車，酉從魁主金刃奴婢，辰天罡為詞訟兼主死喪，戌河魁為欺詐或印授，巳太乙驚怪顛狂，亥登明陰私哭泣，午勝光官訟連綿，子神后奸淫婦女，丑大吉咒詛冤仇，未小吉甜歌醫藥。
+    </blockquote>
+    <p>月將在上四課或三傳時，其特性得以完整發揮；若月將不在課傳中，則只取其時空方位和五行屬性，不深入分析事務象徵。</p>
+</div>
+
+<!-- 第八節 -->
+<div class="section" id="ai-assist">
+    <h2>八、搭配 AI 進行現代解盤</h2>
+
+    <p>本站的排盤工具生成完整的六壬課式後，可以將課式文字複製給大型語言模型（如 ChatGPT、Claude 等），讓 AI 協助進行初步的文字解析和象意梳理。以下提供幾個實用的提示詞（Prompt）模板：</p>
+
+    <h3>模板一：基本吉凶斷課</h3>
+    <div class="prompt-box">我正在進行大六壬占問，以下是排盤結果：
+
+日干支：[例：甲子日]
+月將：[例：亥將（登明）]
+起課時辰：[例：午時]
+四課：[例：第一課 申/寅，第二課 子/申，第三課 戌/午，第四課 午/戌]
+三傳（初/中/末）：[例：申 → 子 → 辰]
+發用課式：[例：元首課]
+天將分配：[列出各宮位的天將]
+空亡：[例：午未空]
+
+所問之事：[例：求職面試能否錄用]
+
+請依照大六壬的基本原則，從課式性質、三傳走向、天將特性、旺相休囚、空亡等角度，給出初步的吉凶分析。</div>
+
+    <h3>模板二：問事件應期</h3>
+    <div class="prompt-box">以下是大六壬課式，請幫我分析事情的應期（大約什麼時間會有結果）：
+
+[填入完整課式同上]
+
+所問：[例：等待的消息何時到來]
+
+請從旺相休囚（當前季節）判斷三傳的氣力，並根據末傳地支的五行及其對應的時間單位（日/月/年），推估可能的應驗時間。</div>
+
+    <h3>模板三：問天將象意</h3>
+    <div class="prompt-box">在我的六壬課式中：
+- 初傳為 [地支] 乘 [天將]，五行屬 [五行]，當季為 [旺/相/休/囚]
+- 中傳為 [地支] 乘 [天將]，五行屬 [五行]，當季為 [旺/相/休/囚]
+- 末傳為 [地支] 乘 [天將]，五行屬 [五行]，當季為 [旺/相/休/囚]
+
+所占之事：[例：一段合作關係是否適合推進]
+
+請分別解析三個天將在其所在五行強弱狀態下的象意，以及三傳整體呈現什麼樣的事件走向。</div>
+
+    <h3>使用 AI 解盤的注意事項</h3>
+    <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="card">
+            <div class="card-title">AI 的優勢</div>
+            <p>AI 擅長梳理象意、整合資料、生成文字說明，能快速將複雜的課式要素組織成可讀的分析段落，適合初學者理解各要素的含意。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">AI 的局限</div>
+            <p>AI 對六壬的理解基於訓練數據，可能存在誤差。最終的斷課判斷仍應以學習者自身對課式規則的掌握為主，AI 的解析作為參考而非定論。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">提示詞的品質</div>
+            <p>提供給 AI 的課式資料越完整、越精確，解析結果就越有參考價值。建議把四課、三傳、天將分配、空亡等全部填寫清楚。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">結合自身學習</div>
+            <p>最佳用法是先自己嘗試斷課，再和 AI 的分析進行對照，從差異中找到學習的切入點，逐步提升自己的解盤能力。</p>
+        </div>
+    </div>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer style="width:100%; max-width:960px; border-top:1px solid var(--border-color); padding-top:24px; text-align:center; color:var(--text-muted); font-size:0.88em; line-height:2;">
+    <p>
+        延伸閱讀：
+        <a href="knowledge.html" style="color:var(--primary-color); text-decoration:none; margin:0 8px;">大六壬知識庫（理論基礎）</a>
+        <a href="/" style="color:var(--text-muted); text-decoration:none; margin:0 8px;">返回排盤工具</a>
+    </p>
+    <p>
+        <a href="/" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">首頁排盤</a>
+        <a href="knowledge.html" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">大六壬知識庫</a>
+        <a href="tutorial.html" style="color:var(--primary-color); text-decoration:none; margin:0 10px;">實戰指南</a>
+        <a href="privacy.html" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">隱私政策</a>
+    </p>
+    <p>© 大六壬 Web 排盤介面 · 本站所有內容僅供學術研究參考</p>
+</footer>
+
 </body>
 </html>

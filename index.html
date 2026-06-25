@@ -493,6 +493,12 @@
 </head>
 
 <body>
+    <nav style="width:100%; max-width:960px; padding:12px 0; border-bottom:1px solid var(--border-color); margin-bottom:20px; text-align:center; font-size:0.95em;">
+        <a href="/" style="color:var(--text-main); text-decoration:none; margin:0 12px; font-weight:bold; color:var(--accent-red);">首頁排盤</a> |
+        <a href="knowledge.html" style="color:var(--text-main); text-decoration:none; margin:0 12px;">大六壬知識庫</a> |
+        <a href="tutorial.html" style="color:var(--text-main); text-decoration:none; margin:0 12px;">實戰指南</a> |
+        <a href="privacy.html" style="color:var(--text-main); text-decoration:none; margin:0 12px;">隱私政策</a>
+    </nav>
     <h1>大六壬 Web排盤介面</h1>
 
     <div class="control-panel">
@@ -533,18 +539,37 @@
     <div id="loading" class="loading">式盤推演中，請稍候...</div>
     <div id="shipan-container"></div>
 
-    <div style="max-width: 900px; margin: 40px auto; padding: 20px; color: #A1887F; font-size: 0.9em; line-height: 1.8; text-align: justify; border-top: 1px dashed #C2B6A3;">
-        <h2 style="font-size: 1.2em; color: var(--text-muted); margin-bottom: 10px;">專業大六壬線上排盤系統</h2>
-        <p>歡迎使用本站提供的<strong>大六壬線上排盤工具</strong>。大六壬與奇門遁甲、太乙神數並稱「三式」，是傳統中國古代最高層次的預測學之一。本系統專為現代命理研究者、實戰預測師以及大六壬愛好者打造，將傳統的 Python 算命引擎完美 Web 化，提供最精確、最視覺化的排盤體驗。</p>
+    <div style="max-width: 900px; margin: 40px auto; padding: 25px 20px; color: #6B6358; font-size: 0.9em; line-height: 1.9; text-align: justify; border-top: 1px dashed #C2B6A3;">
+        <h2 style="font-size: 1.25em; color: var(--text-muted); margin-bottom: 12px;">專業大六壬線上排盤系統</h2>
+        <p>歡迎使用本站提供的<strong>大六壬線上排盤工具</strong>。大六壬與奇門遁甲、太乙神數並稱「三式」，是傳統中國古代最高層次的預測學之一，歷代帝王將相多賴以輔佐決策。本系統專為現代命理研究者、實戰預測師以及大六壬愛好者打造，將傳統的算法引擎完整 Web 化，提供最精確、最視覺化的排盤體驗，免安裝、跨平台支援手機與電腦。</p>
 
-        <h3 style="font-size: 1.1em; color: var(--text-muted); margin-top: 20px;">本站排盤系統核心特色</h3>
-        <ul style="padding-left: 20px; margin-bottom: 20px;">
-            <li><strong>精確天文曆法計算：</strong>內建 ELP2000-82 曆法模型，嚴格以太陽實際過宮（中氣交接）精確到分秒為基準來切換月將，確保大六壬起課數據準確無誤。</li>
-            <li><strong>獨家氣數透視功能：</strong>動態氣數透視，一鍵解析四課三傳中的生剋關係、下賊上/上剋下箭頭，並將落入「空亡」的地支陷阱視覺化，大幅提升實戰抓取發用的直覺。</li>
-            <li><strong>晝夜雙軌貴人演算法：</strong>打破傳統死板設定，前端支援自由切換「傳統卯酉分界」與「真實天文地平線（日出日落）」來判定晝夜貴人，完美考證各流派法則。</li>
-            <li><strong>結構化數據萃取 (AI 輔助)：</strong>內建一鍵複製排盤結構化數據功能，可無縫對接 ChatGPT、Claude 等大語言模型 (LLM)，輔助進行現代化的命理分析與解盤。</li>
+        <h3 style="font-size: 1.1em; color: var(--text-muted); margin-top: 22px; margin-bottom: 10px;">本站排盤系統核心特色</h3>
+        <ul style="padding-left: 22px; margin-bottom: 20px;">
+            <li><strong>精確天文曆法計算：</strong>內建 ELP2000-82 曆法模型，以太陽實際過宮（中氣交接）精確到分秒為基準切換月將，確保起課數據萬無一失，尤其在交節氣當天更能體現精算優勢。</li>
+            <li><strong>獨家氣數透視功能：</strong>動態氣數透視，一鍵解析四課三傳的五行生剋關係與方向箭頭，並將落入「空亡」的地支以斜紋視覺化，大幅提升實戰抓取發用的直覺，是初學者快速入門的利器。</li>
+            <li><strong>晝夜雙軌貴人演算法：</strong>支援自由切換「傳統卯酉分界」與「真實天文地平線（日出日落）」兩套晝夜判定法則，完美適配正時法與活時法的不同需求，兼顧傳統與現代天文考證。</li>
+            <li><strong>結構化數據萃取（AI 輔助）：</strong>內建一鍵複製結構化盤面數據功能，可無縫對接 ChatGPT、Claude 等大語言模型，搭配本站提供的專業提示詞，輔助進行現代化的命理分析與學習。</li>
+            <li><strong>三傳特殊格局自動識別：</strong>自動偵測三傳中的三合、三會、六合、六害、相刑、自刑等特殊干支格局，以醒目徽章即時呈現，讓進階課體分析一目瞭然。</li>
         </ul>
-        <p>無論您是想預測事業運勢、財運、感情婚姻、疾病或是尋人失物，本站的大六壬排盤介面都能為您提供最專業的三傳四課與天地盤十二神分析。免安裝、跨平台支援手機與電腦，隨時隨地為您啟動式盤推演。</p>
+
+        <h3 style="font-size: 1.1em; color: var(--text-muted); margin-top: 22px; margin-bottom: 10px;">大六壬可以預測哪些事？</h3>
+        <p>大六壬的應用範圍極廣，幾乎涵蓋人生的所有重要議題。實戰中最常見的占測方向包括：</p>
+        <ul style="padding-left: 22px; margin-bottom: 20px;">
+            <li><strong>事業與工作：</strong>求職面試吉凶、職場升遷時機、創業合作是否可行、職場人際關係走向。</li>
+            <li><strong>財運與投資：</strong>投資買賣是否獲利、借貸往來能否順利回收、財運旺衰與破財時機。</li>
+            <li><strong>感情與婚姻：</strong>感情發展走向、雙方感情的生剋格局、婚姻時機與姻緣質量評估。</li>
+            <li><strong>健康與疾病：</strong>疾病輕重及痊癒時機、手術吉凶、身體哪個部位需要注意。</li>
+            <li><strong>訴訟與糾紛：</strong>官司勝負走向、糾紛調解是否可行、對方態度的研判。</li>
+            <li><strong>出行與遷移：</strong>出門遠行是否平安、搬家遷居的時機與方向選擇。</li>
+            <li><strong>尋人失物：</strong>失蹤者或遺失物的方位與下落推斷。</li>
+        </ul>
+
+        <h3 style="font-size: 1.1em; color: var(--text-muted); margin-top: 22px; margin-bottom: 10px;">延伸閱讀</h3>
+        <p>如果您是大六壬的初學者，或希望深化對六壬學理的理解，本站提供以下完整的知識資源：</p>
+        <ul style="padding-left: 22px; margin-bottom: 5px;">
+            <li><a href="knowledge.html" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">📚 大六壬完整知識庫</a>——涵蓋六壬歷史、十二天將特性、四課三傳原理、常見課體與空亡解析，是系統學習的完整教材。</li>
+            <li><a href="tutorial.html" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">🎯 實戰應用與解盤指南</a>——正時法、活時法、本命課三大起課情境詳解，以及搭配 AI 輔助解盤的完整提示詞範本。</li>
+        </ul>
     </div>
 
     <script>
@@ -1101,6 +1126,7 @@
     <footer style="width: 100%; border-top: 1px solid var(--border-color); margin-top: 50px; padding: 20px 0; text-align: center; color: var(--text-muted); font-size: 0.9em;">
         <div style="margin-bottom: 10px;">
             <a href="/" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">首頁</a> |
+            <a href="knowledge.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">大六壬知識庫</a> |
             <a href="tutorial.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">實戰與解盤指南</a> |
             <a href="privacy.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">隱私權政策</a> |
             <a href="https://github.com/d1210182010/daliuren-web-engine" target="_blank" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">GitHub 開源專案</a>

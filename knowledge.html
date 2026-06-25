@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大六壬完整知識庫｜歷史、天將、四課三傳原理全解 - 大六壬 Web 排盤介面</title>
+    <meta name="description" content="完整的大六壬學術知識庫。涵蓋大六壬的歷史源流、十二天將特性、四課三傳構成原理、九大課式解說，以及斷課基本法則，是初學者與進階研究者的最佳參考。">
+    <meta name="keywords" content="大六壬,大六壬入門,十二天將,四課,三傳,月將,天地盤,課體,伏吟,返吟,六壬學習,旺相休囚,九大格局">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLKQR6YWST"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VLKQR6YWST');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1866160207158362" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --bg-color: #F8F5EE;
+            --text-main: #2C2C2C;
+            --text-muted: #6B6358;
+            --border-color: #C2B6A3;
+            --primary-color: #8B1D1D;
+            --panel-bg: #FFFFFF;
+            --blockquote-bg: #F4EFE6;
+            --highlight-bg: #FFF8F0;
+        }
+        * { box-sizing: border-box; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: "Kaiti", "STKaiti", "Microsoft JhengHei", serif;
+            margin: 0;
+            padding: 0 20px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            width: 100%;
+            max-width: 960px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 12px;
+            padding: 4px 0;
+        }
+        nav a:hover { color: var(--primary-color); border-bottom: 1px solid var(--primary-color); }
+        nav a.active { color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); }
+        .page-header {
+            width: 100%;
+            max-width: 960px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 2em;
+            letter-spacing: 4px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1em;
+            line-height: 1.8;
+        }
+        .toc {
+            width: 100%;
+            max-width: 960px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 20px 30px;
+            margin-bottom: 40px;
+        }
+        .toc h3 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin: 0 0 12px 0;
+            letter-spacing: 2px;
+        }
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 20px;
+        }
+        .toc li { line-height: 1.8; }
+        .toc a { color: var(--text-main); text-decoration: none; font-size: 0.95em; }
+        .toc a:hover { color: var(--primary-color); }
+        .section {
+            width: 100%;
+            max-width: 960px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            letter-spacing: 3px;
+            margin: 0 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section h3 {
+            font-size: 1.15em;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            margin: 24px 0 12px 0;
+        }
+        .section p {
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        blockquote {
+            background: var(--blockquote-bg);
+            border-left: 4px solid var(--primary-color);
+            margin: 16px 0;
+            padding: 12px 20px;
+            font-size: 1em;
+            line-height: 1.8;
+            color: #3a3028;
+        }
+        blockquote cite {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.88em;
+            color: var(--text-muted);
+        }
+        .highlight-box {
+            background: var(--highlight-bg);
+            border: 1px solid #e0cfa8;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            line-height: 1.9;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .card {
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 16px;
+        }
+        .card .card-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+        .card .card-sub {
+            font-size: 0.88em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .card p {
+            font-size: 0.92em;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .card.auspicious { border-left: 4px solid #4a7c59; }
+        .card.inauspicious { border-left: 4px solid #8B1D1D; }
+        .card.neutral { border-left: 4px solid #888; }
+        .yue-jiang-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.95em;
+        }
+        .yue-jiang-table th, .yue-jiang-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            text-align: center;
+        }
+        .yue-jiang-table th {
+            background: var(--blockquote-bg);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .yue-jiang-table tr:nth-child(even) td { background: #faf7f2; }
+        .ke-style-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .ke-card {
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 18px;
+        }
+        .ke-card .ke-title {
+            font-size: 1.05em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .ke-card p {
+            font-size: 0.92em;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .element-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .element-badge {
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 0.9em;
+        }
+        .yue-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .yue-item {
+            background: var(--blockquote-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            padding: 8px 14px;
+            font-size: 0.93em;
+            line-height: 1.7;
+        }
+        .ad-slot {
+            width: 100%;
+            max-width: 960px;
+            margin: 10px 0 30px;
+            text-align: center;
+        }
+        @media (max-width: 640px) {
+            .section { padding: 24px 18px; }
+            .toc ol { grid-template-columns: 1fr; }
+            .ke-style-grid { grid-template-columns: 1fr; }
+            .yue-list { grid-template-columns: 1fr; }
+            .card-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/">首頁排盤</a> |
+    <a href="knowledge.html" class="active">大六壬知識庫</a> |
+    <a href="tutorial.html">實戰指南</a> |
+    <a href="privacy.html">隱私政策</a>
+</nav>
+
+<div class="page-header">
+    <h1>大六壬知識庫</h1>
+    <p>系統性整理大六壬的核心理論與實操方法，從概念源流到九大課式，循序引導學習。</p>
+</div>
+
+<div class="toc">
+    <h3>目錄</h3>
+    <ol>
+        <li><a href="#intro">一、大六壬概述與三式地位</a></li>
+        <li><a href="#qi-ke">二、起課方式：活時法與固定時法</a></li>
+        <li><a href="#tian-di-pan">三、天地盤的構成</a></li>
+        <li><a href="#yue-jiang">四、月將表（十二月將）</a></li>
+        <li><a href="#si-ke">五、四課的取法</a></li>
+        <li><a href="#jiu-da">六、九大格局（課式）詳解</a></li>
+        <li><a href="#san-chuan">七、三傳含義</a></li>
+        <li><a href="#tian-jiang">八、十二天將特性</a></li>
+        <li><a href="#duan-ke">九、斷課基本要素</a></li>
+        <li><a href="#wang-xiang">十、旺相休囚：五行氣運</a></li>
+    </ol>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第一節 -->
+<div class="section" id="intro">
+    <h2>一、大六壬概述與三式地位</h2>
+
+    <p>大六壬是中國古代術數體系中最為精密的預測學之一，與奇門遁甲、太乙神數並稱為「三式」。三式在各自的側重點上有明確分工：</p>
+    <blockquote>
+        奇門重在地，太乙重在天，六壬重在人。
+    </blockquote>
+    <p>也就是說，奇門遁甲側重於地理方位與空間格局的運用，太乙神數側重於天象運行與宏觀規律，而大六壬則最重視人事的分析——無論是個人行為、時機選擇，還是事件的發端與結局，六壬皆以人為中心加以推演。</p>
+
+    <h3>「六壬」名稱的由來</h3>
+    <p>六壬之所以名為「六壬」，是因為在六十甲子中，凡帶有「壬」天干的日柱共有六個：壬子、壬寅、壬辰、壬午、壬申、壬戌，故名「六壬」。壬水在五行中代表天一生水，水為萬物之源，具有孕育與流通的意義。</p>
+
+    <h3>六壬的學術地位</h3>
+    <p>六壬被視為術數的入門基礎，是學習各種預測術的根本功夫。它的推演體系以時間（時辰）、空間（月將）和事件資料（日干支）為輸入，透過天地盤的旋轉對應，推衍出四課三傳，進而分析事件的動機、過程與結局。六壬不僅可用於預測具體事件，也是一種思維方式的訓練，教人在紛雜的現象中找到規律與線索。</p>
+
+    <h3>六壬的太極理論基礎</h3>
+    <p>六壬以太極陰陽理論為基礎，認為一切事物的運動都遵循陰陽轉化的規律。五行的能量以子、午、卯、酉為轉折點（天地關格），寅申巳亥為能量在無形中運行之所，辰戌丑未為入墓收藏之地。通過干支神將的對應，六壬將時空的運轉模型化，從而實現「以數代事」的推演目的。</p>
+</div>
+
+<!-- 第二節 -->
+<div class="section" id="qi-ke">
+    <h2>二、起課方式：活時法與固定時法</h2>
+
+    <p>六壬起課需要確定三個基本要素：月將、時辰（地支）、日干支。取時的方式有兩種：</p>
+
+    <h3>活時法</h3>
+    <p>活時法多用於替他人起課。讓來人隨意報一個數字（或寫字取數、抽籤取數、摸三堆火柴等），以此數除以十二取餘數，對應十二地支，作為時辰使用。</p>
+
+    <div class="highlight-box">
+        <strong>地支對應規則：</strong><br>
+        1＝子、2＝丑、3＝寅、4＝卯、5＝辰、6＝巳<br>
+        7＝午、8＝未、9＝申、10＝酉、11＝戌、0（餘數為零）＝亥
+    </div>
+
+    <p>若摸三堆數，則第一堆為時辰、第二堆為日干（除以十取餘，1＝甲...10或0＝癸）、第三堆為日支。但需注意：日干與日支的陰陽必須相配（奇數配奇數、偶數配偶數），若不能相配，表示此事難以成立，可再摸一次，連續三次不成則暫時擱置。</p>
+
+    <h3>固定時法</h3>
+    <p>固定時法直接取當日干支及當下實際時辰，再配合當月月將，代入六壬天地盤即可。固定時法只需要知道今日是哪個干支日、現在是哪個時辰（地支），以及本月月將是什麼，三個條件具備就可以起課。</p>
+
+    <h3>數字與事件的對應</h3>
+    <p>活時法的原理在於：萬物皆在數中，任何事件都與其內在的數字結構有關。將事物的狀態轉化為干支數，代入六壬模型，即可在太極陰陽的框架中展開推演。這是「以數代事」的核心思路，也是六壬能夠以一套固定模型分析千變萬化事件的根本原因。</p>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第三節 -->
+<div class="section" id="tian-di-pan">
+    <h2>三、天地盤的構成</h2>
+
+    <p>天地盤是六壬最基礎的空間模型，由固定不動的「地盤」和隨月將旋轉的「天盤」疊加而成。</p>
+
+    <h3>地盤（固定）</h3>
+    <p>地盤是固定的，子、丑、寅……亥十二地支按順時針方向排列於固定位置，各宮永不移動。地盤代表事物的客觀環境、物質基礎和固有秩序。</p>
+
+    <h3>天盤（活動）</h3>
+    <p>天盤可以旋轉。起課時，將本月的月將（太陽所在的地支宮位）加臨在當日的起課時辰上，即「月將加時」，由此決定天盤的起始位置，再按十二地支順序排列十二宮的天盤對應。</p>
+
+    <blockquote>
+        「月將加時」即將月將所對應的地支，放置在起課時辰的地盤位置上，其餘十二神將依序順時針排列。
+    </blockquote>
+
+    <h3>天干的寄宮位置</h3>
+    <p>在六壬天地盤中，十天干不寄於子、午、卯、酉四個正位（因為這四宮是陰陽相交之地，稱為天地關格），而是寄居於四生（四維）和四墓的位置：</p>
+    <div class="highlight-box">
+        甲寄寅、乙寄辰（一說卯）、丙寄巳、丁寄未、戊寄巳、己寄丑、庚寄申、辛寄戌、壬寄亥、癸寄丑
+    </div>
+    <p>這種寄宮設計是六壬天地盤的特有規則，與一般地支排列不同，是起算四課時的重要依據。</p>
+
+    <h3>天地盤的意義</h3>
+    <p>天盤代表動態的外來影響與事物的運動方向；地盤代表靜態的環境、物質條件與自身基礎。天地盤的對應關係，反映了動（天）與靜（地）之間的互動，是六壬分析的核心空間基礎。</p>
+</div>
+
+<!-- 第四節 -->
+<div class="section" id="yue-jiang">
+    <h2>四、月將表（十二月將）</h2>
+
+    <p>月將是太陽每個月在天象運行中所處的地支宮位，每月於「中氣」（節氣中間的交接點）之後更換。月將是六壬起課的關鍵變量之一，決定了天盤的起始角度，因此也被稱為「值事之神」——掌管當月事務的主神。</p>
+
+    <table class="yue-jiang-table">
+        <thead>
+            <tr>
+                <th>農曆月份</th>
+                <th>中氣（換將節氣）</th>
+                <th>月將地支</th>
+                <th>月將名稱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>正月</td><td>雨水後</td><td>亥</td><td>登明</td></tr>
+            <tr><td>二月</td><td>春分後</td><td>戌</td><td>河魁</td></tr>
+            <tr><td>三月</td><td>穀雨後</td><td>酉</td><td>從魁</td></tr>
+            <tr><td>四月</td><td>小滿後</td><td>申</td><td>傳送</td></tr>
+            <tr><td>五月</td><td>夏至後</td><td>未</td><td>小吉</td></tr>
+            <tr><td>六月</td><td>大暑後</td><td>午</td><td>勝光</td></tr>
+            <tr><td>七月</td><td>處暑後</td><td>巳</td><td>太乙</td></tr>
+            <tr><td>八月</td><td>秋分後</td><td>辰</td><td>天罡</td></tr>
+            <tr><td>九月</td><td>霜降後</td><td>卯</td><td>太衝</td></tr>
+            <tr><td>十月</td><td>小雪後</td><td>寅</td><td>功曹</td></tr>
+            <tr><td>十一月</td><td>冬至後</td><td>丑</td><td>大吉</td></tr>
+            <tr><td>十二月</td><td>大寒後</td><td>子</td><td>神后</td></tr>
+        </tbody>
+    </table>
+
+    <p style="margin-top:16px; font-size:0.93em; color:var(--text-muted);">注意：月將的更換以中氣為界，而非節（上氣）。例如正月以「雨水」為中氣，雨水之後月將才由子換為亥。在雨水之前，仍用上個月的月將（子，即神后）。</p>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第五節 -->
+<div class="section" id="si-ke">
+    <h2>五、四課的取法</h2>
+
+    <p>四課是六壬排盤中從天地盤讀取靜態資料的第一個步驟，是對當前事態的快照。四課由日干和日支各取兩課，共四課，分別代表事物的四個象限（陽中之陽、陽中之陰、陰中之陽、陰中之陰）。</p>
+
+    <div class="highlight-box">
+        <strong>四課名稱：</strong><br>
+        第一課：干上陽神（日干寄宮所在，天盤加臨的地支）——陽中之陽<br>
+        第二課：干上陰神（第一課的天盤地支，再看其天盤加臨地支）——陽中之陰<br>
+        第三課：支上陽神（日支位置，天盤加臨的地支）——陰中之陽<br>
+        第四課：支上陰神（第三課的天盤地支，再看其天盤加臨地支）——陰中之陰
+    </div>
+
+    <h3>四課的象徵意義</h3>
+    <p>日干（第一、二課）代表「外事」，即問事人與外界環境、人物的關係及互動；日支（第三、四課）代表「內事」，即家宅、親屬、婚姻、自身近況等內部事務。四課的陽神代表外顯的行為和動機，陰神代表隱藏在背後的思想和潛在意圖。</p>
+
+    <h3>上下克的判斷</h3>
+    <p>取得四課之後，觀察每一課中上下兩個地支的五行生克關係：</p>
+    <ul style="line-height:2;">
+        <li><strong>上克下（天克地）</strong>：天盤地支在五行上剋制地盤地支，稱為「上克下」或「克」。</li>
+        <li><strong>下克上（地克天）</strong>：地盤地支在五行上剋制天盤地支，稱為「下克上」或「賊」。</li>
+    </ul>
+    <p>四課中是否存在克賊，以及克賊的數量，決定了接下來取三傳所用的課式（九大格局之一）。</p>
+</div>
+
+<!-- 第六節 -->
+<div class="section" id="jiu-da">
+    <h2>六、九大格局（課式）詳解</h2>
+
+    <p>九大格局（又稱九大課式）是六壬根據四課中克賊的數量與性質，決定如何取三傳的九種規則體系，由簡到繁逐一嘗試，找到適用的格局後取初傳（發用）。</p>
+
+    <div class="ke-style-grid">
+
+        <div class="ke-card">
+            <div class="ke-title">一、貼克課（重審課 / 元首課）</div>
+            <p>四課中只有一個克（賊）：<br>
+            • 若為「下克上」（賊），稱為<strong>重審課</strong>——事物有暗中玄機，審而再審，不可輕信。<br>
+            • 若為「上克下」（克），稱為<strong>元首課</strong>——事情成敗宛如天意安排，不可抗拒。<br>
+            取法：直接以發生克賊的那一課之上神為初傳（發用）。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">二、比用課</div>
+            <p>四課中有兩個以上的克賊時，需要進行比較取捨。比較方法：觀察各個克賊的上神與日干的陰陽屬性是否相同。陰陽相同者，取為初傳（陽日取陽神，陰日取陰神）。<br>
+            口訣：「諸神克日俱比用，先取與干同性神」。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">三、涉害課</div>
+            <p>若比用後仍有兩個同陰陽的克神，再以地支的「四孟」優先取用。四孟為寅、申、巳、亥；四仲為子、午、卯、酉；四季（四墓）為辰、戌、丑、未。<br>
+            取法：先孟後仲，最後取季。在同類位階中，再取「涉害較深」（克制鏈較長）的一方為初傳。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">四、遙克課（蒿矢 / 彈射）</div>
+            <p>四課上下均無克賊時，改從日干與四課神將的斜向（遠克）關係取用：<br>
+            • 若四課神將遙克日干，稱為<strong>蒿矢課</strong>（神射干）。<br>
+            • 若日干遙克四課神將，稱為<strong>彈射課</strong>（干射神）。<br>
+            有兩個以上的遙克，仍按比用、涉害的原則取捨。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">五、昴星課</div>
+            <p>四課無克賊，又無遙克，事物沒有明顯動機，反映主體心中莫名的煩躁、憂慮或恐懼，暗中有干擾意識在運作。<br>
+            取法口訣：「無遙始向昴星尋，陽仰陰俯酉中神，剛日先神而後日，柔日先干而後辰」。陽日取地盤酉宮上的天盤神（仰視）；陰日取天盤酉宮下的地盤宮位（俯視）。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">六、別責課</div>
+            <p>四課不全（只有三課，因有一個上神重複），稱為「四課不全」，隱藏了一個象限的內容，表示事物有隱秘的第三方或暗中往來。<br>
+            取法口訣：「三課無克別責名，剛日發傳干合神，柔日支前三合取，中末都來干上神」。陽日取天干五合之位；陰日取日支所在三合局中，前一位地支為初傳。中末傳均取日干上神。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">七、八專課</div>
+            <p>日干與日支同位（干支對應五行相同或寄宮相同），四課只有兩課，主客不分、彼我合一，表示事物的關注點在自己身上，或雙方合而為一，難以分辨主客關係。<br>
+            取法口訣：「兩課無疑號八專，陽日陽神順行三，陰日陰神逆三數，中末都來干上眠」。陽日從第一課干上神順數三位；陰日從第四課支上神逆數三位。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">八、伏吟課</div>
+            <p>天盤與地盤完全重疊（月將加臨在本身的地支時辰時出現），萬象靜伏，動機不現，有如「黎明前的黑暗」，百事困頓多磨難。<br>
+            伏吟以「刑」為動（三刑：寅巳申刑、丑戌未刑；二刑：子卯相刑；自刑：辰午酉亥）。陽干取干上神發用，中末連續取刑；陰干取支上神發用，中末取刑冲。</p>
+        </div>
+
+        <div class="ke-card">
+            <div class="ke-title">九、返吟課</div>
+            <p>天盤與地盤形成六沖對應（月將與時辰相沖）。返吟主事物反覆不定、動盪不寧，猶如鐘擺在兩極之間來回。<br>
+            取法：四課有克賊則直接取克為初傳；無克則取驛馬（寅申巳亥為馬地，與日支三合沖的那一個）為初傳。返吟課事物往往有反覆、往返或逆轉的傾向。</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第七節 -->
+<div class="section" id="san-chuan">
+    <h2>七、三傳含義</h2>
+
+    <p>三傳（初傳、中傳、末傳）是六壬最核心的動態分析工具，呈現事件的起點、發展過程與最終結局。它是從四課中按格局規則推演出來的「動態鏈」，是六壬斷事的主要依據。</p>
+
+    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card">
+            <div class="card-title">初傳（發用）</div>
+            <div class="card-sub">又稱「發端之門」</div>
+            <p>代表事件的開端與動機。是什麼力量觸發了這件事？事件從哪個方向開始？初傳所承載的五行、天將，揭示了事件最初的源頭和性質。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">中傳（引從）</div>
+            <div class="card-sub">又稱「移易之門」</div>
+            <p>代表事件的發展過程。事情如何從初傳的起點移動、演變？中傳體現的是中間的轉折、阻力、助力，以及事件的推進路徑。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">末傳（歸計）</div>
+            <div class="card-sub">又稱「歸計之門」</div>
+            <p>代表事件的結局與歸宿。事情最終走向何方？末傳是結果的象徵，是判斷事件成敗、吉凶的最終落點，也是斷課中最受關注的一環。</p>
+        </div>
+    </div>
+
+    <h3>三傳的整體判斷</h3>
+    <p>三傳並非孤立的三個要素，而是一條連貫的時間鏈。讀課時要觀察三傳之間的生克關係：</p>
+    <ul style="line-height:2;">
+        <li>三傳相生（初傳生中傳生末傳）：事情順利發展，前景漸佳。</li>
+        <li>三傳相剋（初傳剋中傳，或中傳剋末傳）：事情進展中有衝突和阻礙，需逐一化解。</li>
+        <li>三傳回環（末傳生或合初傳）：事情可能有反覆，或回到原點。</li>
+        <li>末傳剋日干：結局對問事人不利；末傳生日干：結局對問事人有利。</li>
+    </ul>
+
+    <h3>三傳與日干支的互動</h3>
+    <p>三傳的含義還需配合日干（外事、個人）和日支（內事、家宅）來解讀。初傳剋日干，表示外部壓力主動來臨；日干剋末傳，表示問事人主動的行動有成效。初傳生日支，表示對家宅或親屬有利……如此交叉分析，才能得出全面的判斷。</p>
+</div>
+
+<!-- 第八節 -->
+<div class="section" id="tian-jiang">
+    <h2>八、十二天將特性</h2>
+
+    <p>十二天將是六壬天盤上的十二位神將，各有其五行屬性、宮位對應和象徵意義，是解讀四課三傳的重要工具。十二天將中有六吉六凶，但其吉凶並非絕對，需配合旺相休囚加以判斷。</p>
+
+    <p style="margin-bottom:16px; color:var(--text-muted); font-size:0.92em;">綠色左框為吉神，紅色左框為凶神，灰色左框為中性神。</p>
+
+    <div class="card-grid">
+
+        <div class="card auspicious">
+            <div class="card-title">青龍 ☆☆</div>
+            <div class="card-sub">應甲寅木 · 最吉之神</div>
+            <p>十二天將中最吉祥之神，主財帛、米谷、喜慶亨通。青龍在水地（子、亥）則自由遨遊，動靜皆昌；在寅地乘雲驅雷，利於一切經營。若青龍衰弱或逢剋，則喜中有憂，財物有損。</p>
+        </div>
+
+        <div class="card auspicious">
+            <div class="card-title">六合 ☆</div>
+            <div class="card-sub">應乙卯木 · 婚姻合和之神</div>
+            <p>主喜慶、婚姻、合作、聯合，又名「私門」。六合在午地「升堂」、在卯地「入室」，辦事順利，婚事可成。旺相時婚姻喜事皆成；衰弱時，則有暗中的私情往來或密謀，需留意。</p>
+        </div>
+
+        <div class="card auspicious">
+            <div class="card-title">太常 ☆</div>
+            <div class="card-sub">應己未土 · 衣帛之官</div>
+            <p>主酒食、衣帛、宴會、婚姻、父母印授，為安常吉慶之神。太常在巳地鑄印、在辰地佩印，皆有封官改拜之象。在寅地「側目」則防小人讒言。</p>
+        </div>
+
+        <div class="card auspicious">
+            <div class="card-title">天后 ☆</div>
+            <div class="card-sub">應壬子水 · 陰助之神</div>
+            <p>主婦女、恩惠、暗中助人，是吉神之二。天后在子地守閨治事，動止多宜；在寅申地優游閒暇。天后有暗助他人之功，常代表在幕後默默支持的力量。冬至一陽初生，天后象徵新的開始。</p>
+        </div>
+
+        <div class="card auspicious">
+            <div class="card-title">太陰 ☆</div>
+            <div class="card-sub">應辛酉金 · 陰私之神</div>
+            <p>主珠寶、婦女、陰私暗昧。旺相時有助人之風，可帶來隱性的支援；休囚時主暗昧不明、奸淫邪亂。太陰在申地執政、在卯地微行，對君子品行有所影響。</p>
+        </div>
+
+        <div class="card neutral">
+            <div class="card-title">貴人 ★</div>
+            <div class="card-sub">應己丑土 · 百神之主</div>
+            <p>十二天將之首，百神之主。貴人有晝貴（陽貴）與夜貴（陰貴）之分，兩個貴人起點不同，需依晝夜選取。貴人「登天門」（臨亥宮）則萬事有成。最忌貴人落空亡或被困制。</p>
+        </div>
+
+        <div class="card inauspicious">
+            <div class="card-title">螣蛇 ✗✗</div>
+            <div class="card-sub">應丙巳火 · 最凶之神</div>
+            <p>十二天將中最凶之神，主驚疑、怪異、惡夢、恐懼。旺相時雖有繁衍之象，但衰弱則帶來火災、驚嚇、血光、死亡等凶事。見螣蛇須特別提防突如其來的意外和恐懼。</p>
+        </div>
+
+        <div class="card inauspicious">
+            <div class="card-title">朱雀 ✗</div>
+            <div class="card-sub">應丁午火 · 文書之神</div>
+            <p>主文章、書信、口舌、詞訟。旺相時才華顯現，文書順利；衰弱或臨凶位時，主爭訟、官司纏身。朱雀在亥地「入水」，凶氣消解；在巳午未申順境猖狂，口舌官司不斷。</p>
+        </div>
+
+        <div class="card inauspicious">
+            <div class="card-title">勾陳 ✗</div>
+            <div class="card-sub">應戊辰土 · 爭訟之神</div>
+            <p>主征伐、逮捕、詞訟、爭論、田土、鉤連、遲滯，為凶神之一。勾陳升堂（臨辰）必有抓人之事；臨巳捧印，對官員有封拜，對常人則有被抓之象。臨寅則勾陳被克，可上訴制伏。</p>
+        </div>
+
+        <div class="card inauspicious">
+            <div class="card-title">天空 ✗</div>
+            <div class="card-sub">應戊戌土 · 空亡之神</div>
+            <p>無形無影，主虛空、欺騙、詐偽、不實。天空所在之處，一切皆有虛假成分，需仔細辨別真假。天空正對貴人，是位階最低的天將，常以「奏書」之名呈報，但奏言多有不實。</p>
+        </div>
+
+        <div class="card inauspicious">
+            <div class="card-title">白虎 ✗✗</div>
+            <div class="card-sub">應庚申金 · 死亡之神</div>
+            <p>主道路、刀劍、血光、疾病、死亡、官家橫禍，為至凶之神。白虎臨子、亥落水則凶解；臨午、巳遭焚則受制。白虎登山（臨寅）威不可擋，掌生殺大權。見白虎須謹防血光之災。</p>
+        </div>
+
+        <div class="card inauspicious">
+            <div class="card-title">玄武 ✗</div>
+            <div class="card-sub">應癸亥水 · 盜賊之神</div>
+            <p>夜方陰神，主盜賊、走失、陰私、遺亡、色情。玄武在辰地「失路」，水逢土制必被擒捉，失物可回。玄武在亥地「伏藏」，盜賊已歸家難追。見日光（旺相）則賊難逃。</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- 第九節 -->
+<div class="section" id="duan-ke">
+    <h2>九、斷課基本要素</h2>
+
+    <p>六壬斷課並非僅憑三傳，而是整合多個要素進行綜合分析。以下是斷課時需要掌握的八個基本要素：</p>
+
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+
+        <div class="card">
+            <div class="card-title">① 正時（先鋒）</div>
+            <p>起課時辰是「先鋒」，是事情的第一個信號。時辰代表此刻的即時訊號，是整個起課的入口與觸發點。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">② 月將（值事）</div>
+            <p>月將是當月的主管之神，稱為「值事」，代表當前時段整體的格局走向，影響天盤的基本結構。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">③ 日干（外事）</div>
+            <p>日干代表問事人與外在環境、他人的關係和互動，是「外事」的指標——求財、求職、交際、對外行動等均看日干。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">④ 日支（內事）</div>
+            <p>日支代表家庭、宅院、婚姻、配偶、近親等「內事」，是問事人自身近況和內部環境的體現。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⑤ 初傳（發端）</div>
+            <p>事件的起點與動機，揭示是什麼力量觸發了這件事、事情從哪個方向發端。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⑥ 中傳（移易）</div>
+            <p>事件的發展過程，呈現事情如何從起點移動、演變，以及中間出現的轉折、阻力或助力。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⑦ 末傳（歸計）</div>
+            <p>事件的最終結局，是斷吉凶的落點。末傳與日干的生剋關係，直接反映結果對問事人的利弊。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⑧ 年命（變體）</div>
+            <p>問事人出生年的地支（本命），又稱「行年」。年命是第八個參考要素，用於確認結果是否真正落到問事人身上，也可判斷事情在哪一年的流年會有應期。</p>
+        </div>
+
+    </div>
+
+    <h3>斷課的整合方法</h3>
+    <p>斷課時，先確定問的是哪類事（外事看日干、內事看日支），再以初傳定事件動機，中傳觀察過程，末傳斷結局。配合十二天將的特性（財、官、文書、疾病等），以及五行旺相休囚的強弱，就能給出有依據的判斷。若年命也參與克應，則事件的影響更為明確和深遠。</p>
+</div>
+
+<!-- 第十節 -->
+<div class="section" id="wang-xiang">
+    <h2>十、旺相休囚：五行氣運</h2>
+
+    <p>旺相休囚是判斷五行強弱的基本方法，也是六壬斷事的重要輔助工具。五行在不同季節中的能量狀態有強弱之別，直接影響事件的發展速度和結果好壞。</p>
+
+    <blockquote>
+        得時我旺、我生者相、生我者休、克我者囚、我克者死。
+    </blockquote>
+
+    <p>這句口訣的意思是：當某五行「得時」（在自己旺盛的季節），它自身為「旺」；它所生的五行為「相」（有力但次旺）；生它的五行此時為「休」（退位休息）；剋它的五行為「囚」（被制而無力）；被它所剋的五行為「死」（最弱）。</p>
+
+    <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="card">
+            <div class="card-title">春季（木旺）</div>
+            <p>木旺、火相、水休、金囚、土死。春天木氣當令，凡三傳或天將含木者力量最強。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">夏季（火旺）</div>
+            <p>火旺、土相、木休、水囚、金死。夏天火氣當令，含火的三傳或天將最有力量。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">秋季（金旺）</div>
+            <p>金旺、水相、土休、火囚、木死。秋天金氣當令，含金的三傳或天將最有力量。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">冬季（水旺）</div>
+            <p>水旺、木相、金休、土囚、火死。冬天水氣當令，含水的三傳或天將最有力量。</p>
+        </div>
+    </div>
+
+    <h3>旺相休囚與斷課吉凶</h3>
+    <p>旺相休囚是判斷「氣」的強弱，而非直接決定吉凶。一個吉神若落入休囚之地，其吉力大減；一個凶神若落入旺相之位，其凶力倍增。反之，凶神落入休囚，凶力消解；吉神得旺相，吉力倍增。因此，斷課時必須將天將性質（吉凶）與旺相休囚（強弱）結合起來，才能給出準確的判斷。</p>
+
+    <h3>旺相休囚與應期</h3>
+    <blockquote>
+        旺氣發用利求官，相氣發用利求財，囚氣發用病呻吟，死氣發用病必死，休氣發用病纏綿。
+    </blockquote>
+    <p>這是傳統對旺相休囚與事件應期關係的概括：以旺氣發用（初傳），求官最有利；相氣發用，求財有望；而囚、死、休氣發用，則在疾病方面各有不同的凶象。這一原則可以類推至各類占問：旺氣代表當下最有力的動能，相氣代表近期將至的機會，休囚代表已過或無力的事態。</p>
+
+    <h3>長生十二宮（補充）</h3>
+    <p>除旺相休囚外，五行還有長生十二宮的概念，即每個五行在十二地支中依次經歷「長生、沐浴、冠帶、臨官、帝旺、衰、病、死、墓、絕、胎、養」十二個階段。六壬在判斷事物的生命週期和應期時，也會參考長生十二宮，以更細膩地推算事件在哪個階段最有力、在哪個階段走向終結。</p>
+</div>
+
+<!-- 廣告 -->
+<div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1866160207158362" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer style="width:100%; max-width:960px; border-top:1px solid var(--border-color); padding-top:24px; text-align:center; color:var(--text-muted); font-size:0.88em; line-height:2;">
+    <p>
+        <a href="/" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">首頁排盤</a>
+        <a href="knowledge.html" style="color:var(--primary-color); text-decoration:none; margin:0 10px;">大六壬知識庫</a>
+        <a href="tutorial.html" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">實戰指南</a>
+        <a href="privacy.html" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">隱私政策</a>
+    </p>
+    <p>© 大六壬 Web 排盤介面 · 本站所有內容僅供學術研究參考</p>
+</footer>
+
+</body>
+</html>
