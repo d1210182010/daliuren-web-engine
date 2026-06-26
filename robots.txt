@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daliuren-web-engine.onrender.com/sitemap.xml

@@ -3,81 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隱私權政策 - 大六壬 Web排盤介面</title>
+    <title>隱私權政策 - 大六壬 Web 排盤介面</title>
+    <meta name="description" content="大六壬 Web 排盤介面的隱私權保護政策。說明本站如何處理使用者資料、第三方廣告與 Cookie 的使用方式，本站排盤運算均於前端執行，不儲存任何個人資料。">
+    <meta name="keywords" content="大六壬,隱私權政策,Cookie,個人資料,排盤介面">
+
+    <meta property="og:title" content="隱私權政策 - 大六壬 Web 排盤介面">
+    <meta property="og:description" content="大六壬 Web 排盤介面的隱私權保護政策，說明資料處理、第三方廣告與 Cookie 的使用方式。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daliuren-web-engine.onrender.com/privacy.html">
+
+    <link rel="canonical" href="https://daliuren-web-engine.onrender.com/privacy.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLKQR6YWST"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VLKQR6YWST');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1866160207158362" crossorigin="anonymous"></script>
+
     <style>
         :root {
             --bg-color: #F8F5EE;
             --text-main: #2C2C2C;
             --text-muted: #6B6358;
             --border-color: #C2B6A3;
+            --primary-color: #8B1D1D;
+            --panel-bg: #FFFFFF;
+            --blockquote-bg: #F4EFE6;
+            --highlight-bg: #FFF8F0;
         }
+        * { box-sizing: border-box; }
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: "Kaiti", "STKaiti", "Microsoft JhengHei", serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 0 20px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .container {
-            max-width: 800px;
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
-            line-height: 1.8;
-            text-align: justify;
-        }
-        h1 {
-            font-size: 1.8em;
-            letter-spacing: 2px;
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 10px;
+        nav {
+            width: 100%;
+            max-width: 960px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
             margin-bottom: 30px;
             text-align: center;
+            font-size: 0.95em;
         }
-        h2 { font-size: 1.3em; margin-top: 30px; color: var(--text-muted); }
-        a { color: #8B1D1D; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-        .back-link { display: block; text-align: center; margin-top: 30px; font-size: 1.2em; }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 12px;
+            padding: 4px 0;
+        }
+        nav a:hover { color: var(--primary-color); border-bottom: 1px solid var(--primary-color); }
+        nav a.active { color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); }
+        .page-header {
+            width: 100%;
+            max-width: 960px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 2em;
+            letter-spacing: 4px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1em;
+            line-height: 1.8;
+        }
+        .container {
+            width: 100%;
+            max-width: 960px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 35px 40px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+        .container h2 {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            margin: 28px 0 12px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .container h2:first-of-type { margin-top: 0; }
+        .container p { margin-bottom: 14px; }
+        .container ul { padding-left: 22px; line-height: 2; }
+        .container a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+        .container a:hover { text-decoration: underline; }
+        .update-date {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            text-align: right;
+            margin-top: 24px;
+        }
+        footer {
+            width: 100%;
+            max-width: 960px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88em;
+            line-height: 2;
+        }
+        footer a { text-decoration: none; margin: 0 10px; }
+        @media (max-width: 640px) {
+            .container { padding: 24px 18px; }
+        }
     </style>
 </head>
 <body>
-    <nav style="width:100%; max-width:860px; padding:12px 0; border-bottom:1px solid var(--border-color); margin-bottom:30px; text-align:center; font-size:0.95em;">
-        <a href="/" style="color:var(--text-main); text-decoration:none; margin:0 12px;">首頁排盤</a> |
-        <a href="knowledge.html" style="color:var(--text-main); text-decoration:none; margin:0 12px;">大六壬知識庫</a> |
-        <a href="tutorial.html" style="color:var(--text-main); text-decoration:none; margin:0 12px;">實戰指南</a> |
-        <a href="privacy.html" style="color:#8B1D1D; font-weight:bold; text-decoration:none; margin:0 12px;">隱私政策</a>
-    </nav>
-    <div class="container">
-        <h1>隱私權政策 (Privacy Policy)</h1>
-        
-        <p>歡迎您使用「大六壬 Web 排盤介面」（以下簡稱本站）。本站非常重視您的隱私權，為了讓您能夠安心的使用本站的各項服務與資訊，特此向您說明本站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
 
-        <h2>一、 隱私權保護政策的適用範圍</h2>
-        <p>隱私權保護政策內容，包括本站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本站以外的相關連結網站，也不適用於非本站所委託或參與管理的人員。</p>
+<nav>
+    <a href="/">首頁排盤</a> |
+    <a href="knowledge.html">大六壬知識庫</a> |
+    <a href="tutorial.html">實戰指南</a> |
+    <a href="privacy.html" class="active">隱私政策</a>
+</nav>
 
-        <h2>二、 個人資料的蒐集、處理及利用方式</h2>
-        <p>本站為靜態之命理排盤工具，系統演算均在您的瀏覽器前端執行。本站<strong>不會</strong>主動要求您輸入姓名、身分證字號或聯絡方式等個人機密資料。您在排盤時所輸入的時間、性別等參數，僅作當下運算使用，本站伺服器不會進行任何儲存或記錄。</p>
+<div class="page-header">
+    <h1>隱私權政策</h1>
+    <p>本站重視您的隱私權，以下說明本站如何蒐集、處理與保護您的資料。</p>
+</div>
 
-        <h2>三、 第三方廣告與 Cookie 的使用</h2>
-        <p>為了維持本站的免費營運，本站會使用第三方廣告廠商（如 Google AdSense）來放送廣告。這些公司可能會使用 Cookie 等技術，透過收集您在本站或其他網站的瀏覽活動資訊（不包含您的姓名、地址、電子郵件或電話號碼），向您放送您可能感興趣的商品和服務廣告。</p>
-        <ul>
-            <li>第三方供應商（包括 Google）會使用 Cookie，以根據使用者先前的網站造訪紀錄來放送廣告。</li>
-            <li>Google 使用廣告 Cookie，可讓該公司及其合作夥伴根據使用者在您的網站和/或網際網路上其他網站的造訪紀錄，向使用者放送合適的廣告。</li>
-            <li>您可以前往 <a href="https://myadcenter.google.com/" target="_blank">Google 廣告設定</a> 選擇停用個人化廣告，或前往 <a href="https://optout.aboutads.info/" target="_blank">www.aboutads.info</a> 選擇停用第三方供應商用來放送個人化廣告的 Cookie。</li>
-        </ul>
+<div class="container">
+    <p>歡迎您使用「大六壬 Web 排盤介面」（以下簡稱本站）。本站非常重視您的隱私權，為了讓您能夠安心地使用本站的各項服務與資訊，特此向您說明本站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
 
-        <h2>四、 網站對外的相關連結</h2>
-        <p>本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</p>
+    <h2>一、隱私權保護政策的適用範圍</h2>
+    <p>隱私權保護政策內容，包括本站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本站以外的相關連結網站，也不適用於非本站所委託或參與管理的人員。</p>
 
-        <h2>五、 隱私權保護政策之修正</h2>
-        <p>本站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+    <h2>二、個人資料的蒐集、處理及利用方式</h2>
+    <p>本站為命理排盤工具，排盤的輸入參數由您於前端填寫後送出運算。本站<strong>不會</strong>主動要求您輸入姓名、身分證字號或聯絡方式等個人機密資料。您在排盤時所輸入的時間、性別等參數，僅作當下運算使用，本站伺服器不會進行任何儲存或記錄。</p>
 
-        <a href="/" class="back-link">← 回到排盤首頁</a>
-    </div>
+    <h2>三、第三方廣告與 Cookie 的使用</h2>
+    <p>為了維持本站的免費營運，本站會使用第三方廣告廠商（如 Google AdSense）來放送廣告。這些公司可能會使用 Cookie 等技術，透過收集您在本站或其他網站的瀏覽活動資訊（不包含您的姓名、地址、電子郵件或電話號碼），向您放送您可能感興趣的商品和服務廣告。</p>
+    <ul>
+        <li>第三方供應商（包括 Google）會使用 Cookie，以根據使用者先前的網站造訪紀錄來放送廣告。</li>
+        <li>Google 使用廣告 Cookie，可讓該公司及其合作夥伴根據使用者在您的網站和／或網際網路上其他網站的造訪紀錄，向使用者放送合適的廣告。</li>
+        <li>您可以前往 <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Google 廣告設定</a> 選擇停用個人化廣告，或前往 <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">www.aboutads.info</a> 選擇停用第三方供應商用來放送個人化廣告的 Cookie。</li>
+    </ul>
+
+    <h2>四、網站流量分析</h2>
+    <p>本站使用 Google Analytics 進行匿名的網站流量統計，以了解使用者的造訪概況並改善服務品質。這些統計資料為彙總性質，不會用於識別個別使用者的身分。</p>
+
+    <h2>五、網站對外的相關連結</h2>
+    <p>本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</p>
+
+    <h2>六、隱私權保護政策之修正</h2>
+    <p>本站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+
+    <p class="update-date">最後更新日期：2026 年 6 月</p>
+</div>
+
+<footer>
+    <p>
+        <a href="/" style="color:var(--text-muted);">首頁排盤</a>
+        <a href="knowledge.html" style="color:var(--text-muted);">大六壬知識庫</a>
+        <a href="tutorial.html" style="color:var(--text-muted);">實戰指南</a>
+        <a href="privacy.html" style="color:var(--primary-color);">隱私政策</a>
+    </p>
+    <p>© 大六壬 Web 排盤介面 · 本站所有內容僅供學術研究參考</p>
+</footer>
+
 </body>
 </html>

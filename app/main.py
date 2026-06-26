@@ -31,6 +31,18 @@ async def tutorial_page():
 async def knowledge_page():
     return FileResponse("knowledge.html")
 
+@app.get("/favicon.svg", include_in_schema=False)
+async def favicon():
+    return FileResponse("favicon.svg", media_type="image/svg+xml")
+
+@app.get("/robots.txt", include_in_schema=False)
+async def robots():
+    return FileResponse("robots.txt", media_type="text/plain")
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap():
+    return FileResponse("sitemap.xml", media_type="application/xml")
+
 @app.post("/api/v1/shipan/generate", response_model=ShiPanResponse)
 async def create_shipan(request: ShiPanRequest):
     try:

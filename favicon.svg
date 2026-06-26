@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#8B1D1D"/>
+  <rect x="4" y="4" width="56" height="56" rx="9" fill="none" stroke="#F8F5EE" stroke-width="2" opacity="0.6"/>
+  <text x="32" y="34" font-family="Kaiti, STKaiti, 'Microsoft JhengHei', serif" font-size="40" font-weight="bold" fill="#F8F5EE" text-anchor="middle" dominant-baseline="central">壬</text>
+</svg>

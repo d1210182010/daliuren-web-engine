@@ -14,6 +14,28 @@
     <meta property="og:description" content="專業免費的大六壬排盤工具。內建精確天文曆法與獨家氣數透視，免安裝支援手機電腦，助您快速斷課！">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://daliuren-web-engine.onrender.com/">
+    <meta property="og:image" content="https://daliuren-web-engine.onrender.com/favicon.svg">
+
+    <link rel="canonical" href="https://daliuren-web-engine.onrender.com/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "大六壬 Web 排盤介面",
+        "url": "https://daliuren-web-engine.onrender.com/",
+        "description": "專業免費的大六壬線上排盤系統，提供精確天文曆法計算、氣數透視功能與晝夜雙軌演算法，免安裝支援手機與電腦。",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "inLanguage": "zh-TW",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD"
+        }
+    }
+    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLKQR6YWST"></script>
     <script>
@@ -489,6 +511,44 @@
             color: #A1887F;
             margin-bottom: 5px;
         }
+
+        /* ================= 行動裝置 RWD ================= */
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            nav { font-size: 0.85em !important; }
+            nav a { margin: 0 6px !important; }
+            h1 { font-size: 1.5em; letter-spacing: 2px; margin-bottom: 20px; text-align: center; }
+
+            .control-panel {
+                padding: 14px 12px;
+                gap: 10px;
+                width: 100%;
+            }
+            .control-panel label { font-size: 0.92em; }
+            .control-panel input,
+            .control-panel select { padding: 5px; font-size: 14px; }
+            .control-panel label[style*="margin-left"] { margin-left: 0 !important; }
+            .control-panel .btn-primary,
+            .control-panel .btn-toggle-qi,
+            .control-panel .btn-copy { margin-left: 0 !important; }
+            .btn-primary, .btn-toggle-qi, .btn-copy { width: 100%; }
+
+            #shipan-container { padding: 16px; }
+            .top-row { gap: 24px; }
+            table { font-size: 1.05em; }
+            td { padding: 8px 10px; }
+            .tianpan-table td { width: 52px; height: 52px; padding: 3px; }
+            .tp-branch { font-size: 1.1em; }
+
+            .info-section { font-size: 1em; }
+            .guati-section { font-size: 1em; padding: 12px; }
+        }
+
+        @media (max-width: 400px) {
+            .tianpan-table td { width: 44px; height: 44px; }
+            .tianpan-table { font-size: 0.9em; }
+            h1 { font-size: 1.3em; }
+        }
     </style>
 </head>
 
@@ -568,7 +628,7 @@
         <p>如果您是大六壬的初學者，或希望深化對六壬學理的理解，本站提供以下完整的知識資源：</p>
         <ul style="padding-left: 22px; margin-bottom: 5px;">
             <li><a href="knowledge.html" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">📚 大六壬完整知識庫</a>——涵蓋六壬歷史、十二天將特性、四課三傳原理、常見課體與空亡解析，是系統學習的完整教材。</li>
-            <li><a href="tutorial.html" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">🎯 實戰應用與解盤指南</a>——正時法、活時法、本命課三大起課情境詳解，以及搭配 AI 輔助解盤的完整提示詞範本。</li>
+            <li><a href="tutorial.html" style="color: var(--accent-red); font-weight: bold; text-decoration: none;">🎯 大六壬實戰指南</a>——完整起課流程、旬中空亡、驛馬祿神、貴登天門、天羅地網等進階判斷，以及搭配 AI 輔助解盤的完整提示詞範本。</li>
         </ul>
     </div>
 
@@ -887,8 +947,8 @@
                             <div style="font-size: 1.1em; color: var(--text-main); font-weight: bold; margin-bottom: 12px; letter-spacing: 1px;">
                                 初學大六壬？不知道該怎麼下手？
                             </div>
-                            <a href="/tutorial.html" target="_blank" style="display: inline-block; background: var(--text-main); color: white; text-decoration: none; padding: 8px 24px; border-radius: 2px; font-weight: bold; letter-spacing: 2px; transition: 0.3s;">
-                                請參閱【實戰與解盤指南】
+                            <a href="/tutorial.html" target="_blank" rel="noopener" style="display: inline-block; background: var(--text-main); color: white; text-decoration: none; padding: 8px 24px; border-radius: 2px; font-weight: bold; letter-spacing: 2px; transition: 0.3s;">
+                                請參閱【實戰指南】
                             </a>
                         `;
                 container.appendChild(guideDiv);
@@ -902,7 +962,8 @@
                 btnCopy.style.display = "block";
 
             } catch (error) {
-                container.innerHTML = `<p style="color: red; text-align: center;">起課失敗！請檢查連線狀態。</p>`;
+                const msg = (error && error.message) ? error.message : "未知錯誤";
+                container.innerHTML = `<p style="color: var(--accent-red); text-align: center; line-height:1.8;">起課失敗：${msg}<br><span style="font-size:0.85em; color:var(--text-muted);">請確認日期時間輸入正確，或稍後再試。</span></p>`;
                 container.style.display = "block";
             } finally {
                 loading.style.display = "none";
@@ -1128,10 +1189,10 @@
             <a href="/" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">首頁排盤</a> |
             <a href="knowledge.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">大六壬知識庫</a> |
             <a href="tutorial.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">實戰指南</a> |
-            <a href="privacy.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">隱私權政策</a> |
-            <a href="https://github.com/d1210182010/daliuren-web-engine" target="_blank" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">GitHub 開源專案</a>
+            <a href="privacy.html" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">隱私政策</a> |
+            <a href="https://github.com/d1210182010/daliuren-web-engine" target="_blank" rel="noopener" style="color: var(--text-main); text-decoration: none; margin: 0 10px;">GitHub 開源專案</a>
         </div>
-        <p>&copy; 2026 大六壬 Web 排盤介面. All Rights Reserved.</p>
+        <p>© 大六壬 Web 排盤介面 · 本站所有內容僅供學術研究參考</p>
     </footer>
 
 </body>
