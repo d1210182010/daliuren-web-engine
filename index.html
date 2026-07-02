@@ -562,11 +562,11 @@
     <h1>大六壬 Web排盤介面</h1>
 
     <div class="control-panel">
-        <label>年 <input type="number" id="year"></label>
-        <label>月 <input type="number" id="month"></label>
-        <label>日 <input type="number" id="day"></label>
-        <label>時 <input type="number" id="hour"></label>
-        <label>分 <input type="number" id="minute"></label>
+        <label>年 <input type="number" id="year" min="1920" max="2100"></label>
+        <label>月 <input type="number" id="month" min="1" max="12"></label>
+        <label>日 <input type="number" id="day" min="1" max="31"></label>
+        <label>時 <input type="number" id="hour" min="0" max="23"></label>
+        <label>分 <input type="number" id="minute" min="0" max="59"></label>
 
         <label style="margin-left:10px;">法則: 
             <select id="daynight-rule">
@@ -738,6 +738,13 @@
             document.getElementById('day').value = now.getDate();
             document.getElementById('hour').value = now.getHours();
             document.getElementById('minute').value = now.getMinutes();
+
+            // 在任一輸入框按 Enter 即可直接起課
+            document.querySelectorAll('.control-panel input').forEach(el => {
+                el.addEventListener('keydown', e => {
+                    if (e.key === 'Enter') triggerEngine();
+                });
+            });
         });
 
         function toggleQiMode() {
@@ -789,8 +796,14 @@
             btnQi.style.display = "none";
             btnCopy.style.display = "none";
             container.innerHTML = "";
+            loading.innerHTML = "式盤推演中，請稍候...";
             loading.style.display = "block";
             document.body.classList.remove('qi-mode');
+
+            // 免費伺服器閒置後會休眠，冷啟動需較長時間，超過 5 秒給予提示
+            const coldStartTimer = setTimeout(() => {
+                loading.innerHTML = "式盤推演中，請稍候...<br><span style=\"font-size:0.85em; font-weight:normal; color:var(--text-muted);\">伺服器喚醒中，首次起課可能需要 30～60 秒，請耐心等候</span>";
+            }, 5000);
 
             const y = parseInt(document.getElementById('year').value);
             const m = parseInt(document.getElementById('month').value);
@@ -961,11 +974,15 @@
                 btnQi.innerHTML = '👁️ 開啟氣數透視';
                 btnCopy.style.display = "block";
 
+                // 自動捲動至盤面，行動裝置上尤其重要（結果常在畫面外）
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
             } catch (error) {
                 const msg = (error && error.message) ? error.message : "未知錯誤";
                 container.innerHTML = `<p style="color: var(--accent-red); text-align: center; line-height:1.8;">起課失敗：${msg}<br><span style="font-size:0.85em; color:var(--text-muted);">請確認日期時間輸入正確，或稍後再試。</span></p>`;
                 container.style.display = "block";
             } finally {
+                clearTimeout(coldStartTimer);
                 loading.style.display = "none";
 
                 // 🔴 新增：防連點鎖定機制 (解除) - 運算結束後，重新啟用按鈕

@@ -162,6 +162,8 @@
             gap: 16px;
             margin-top: 16px;
         }
+        .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
         .card {
             background: var(--blockquote-bg);
             border: 1px solid var(--border-color);
@@ -266,7 +268,31 @@
             .ke-style-grid { grid-template-columns: 1fr; }
             .yue-list { grid-template-columns: 1fr; }
             .card-grid { grid-template-columns: 1fr 1fr; }
+            .card-grid.cols-3 { grid-template-columns: 1fr; }
+            .card-grid.cols-4 { grid-template-columns: 1fr 1fr; }
         }
+        html { scroll-behavior: smooth; }
+        .section { scroll-margin-top: 16px; }
+        #backTop {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--panel-bg);
+            color: var(--primary-color);
+            font-size: 1.3em;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+            z-index: 100;
+        }
+        #backTop.show { opacity: 1; pointer-events: auto; }
+        #backTop:hover { background: var(--blockquote-bg); }
     </style>
 </head>
 <body>
@@ -529,7 +555,7 @@
 
     <p>三傳（初傳、中傳、末傳）是六壬最核心的動態分析工具，呈現事件的起點、發展過程與最終結局。它是從四課中按格局規則推演出來的「動態鏈」，是六壬斷事的主要依據。</p>
 
-    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="card-grid cols-3">
         <div class="card">
             <div class="card-title">初傳（發用）</div>
             <div class="card-sub">又稱「發端之門」</div>
@@ -717,7 +743,7 @@
 
     <p>這句口訣的意思是：當某五行「得時」（在自己旺盛的季節），它自身為「旺」；它所生的五行為「相」（有力但次旺）；生它的五行此時為「休」（退位休息）；剋它的五行為「囚」（被制而無力）；被它所剋的五行為「死」（最弱）。</p>
 
-    <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="card-grid cols-4">
         <div class="card">
             <div class="card-title">春季（木旺）</div>
             <p>木旺、火相、水休、金囚、土死。春天木氣當令，凡三傳或天將含木者力量最強。</p>
@@ -764,6 +790,16 @@
     </p>
     <p>© 大六壬 Web 排盤介面 · 本站所有內容僅供學術研究參考</p>
 </footer>
+
+<button id="backTop" aria-label="回到頁面頂部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+    (function () {
+        const bt = document.getElementById('backTop');
+        window.addEventListener('scroll', function () {
+            bt.classList.toggle('show', window.scrollY > 600);
+        }, { passive: true });
+    })();
+</script>
 
 </body>
 </html>
